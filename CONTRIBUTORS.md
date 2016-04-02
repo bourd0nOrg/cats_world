@@ -1,1 +1,1 @@
-nadegda96 | Parfenova Nadegda| nadegda-sp@mail.ru
+nadegda96 | Parfenova Nadegda| nadegdaspp@gmail.com

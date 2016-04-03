@@ -6,3 +6,4 @@ nadegda96 | Parfenova Nadegda| nadegda-sp@mail.ru
 Java2ME | Khadis Asfyandiyarov | Fisher5991@gmail.com  
 Anastasiya4895 | Anastasiya Zinchenko | vesnushka4895@mail.ru  
 S1ayerhs | Alexey Novikov | neimorr@yandex.ru
+Zigiz | Mezentsev Ivan | Zigiz1996@list.ru

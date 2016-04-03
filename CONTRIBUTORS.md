@@ -1,1 +1,1 @@
-ONETUZ | Alexander Shvartsman | sashakaiser@yandex.ru
+Zigiz | Mezentsev Ivan | Zigiz1996@list.ru

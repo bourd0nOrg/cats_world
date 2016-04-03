@@ -3,5 +3,6 @@ ONETUZ | Alexander Shvartsman | sashakaiser@yandex.ru
 Elfres | Anna Gruzdeva | anyagruzdeva@yandex.ru  
 Dron74 | Kolyadin Andrey | avenger225@yahoo.com  
 nadegda96 | Parfenova Nadegda| nadegda-sp@mail.ru  
-Java2ME | Khadis Asfyandiyarov | Fisher5991@gmail.com
-Anastasiya4895 | Anastasiya Zinchenko | vesnushka4895@mail.ru
+Java2ME | Khadis Asfyandiyarov | Fisher5991@gmail.com  
+Anastasiya4895 | Anastasiya Zinchenko | vesnushka4895@mail.ru  
+S1ayerhs | Alexey Novikov | neimorr@yandex.ru  

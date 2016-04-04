@@ -41,7 +41,7 @@ public class Pig extends Pet implements Alive {
         return name;
     }
     public String toString() {
-        return "Cat " + name;
+        return "Pig " + name;
     }
     public String getBreed() {
         return breed;

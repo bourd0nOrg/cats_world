@@ -1,4 +1,52 @@
 package com.alex.pets;
 
-public class Pig {
+public class Pig extends Pet implements Alive {
+
+    private String name;
+    private String breed;
+    private String eating;
+
+    public Pig(String someName, String breed, String eating) {
+        this.name = someName;
+        this.breed = breed;
+        this.eating = eating;
+    }
+
+    public void hryukat() {
+        if (isAlive) {
+            System.out.println("Pig " + name + " is hryukaet");
+        } else {
+            System.out.println(";(");
+        }
+    }
+
+    public void swimming() {
+        if (isAlive) {
+            System.out.println("Pig " + name + " is swimming v gryazi");
+        } else {
+            System.out.println(";(");
+        }
+    }
+
+    public void zhratb() {
+        if (isAlive) {
+            System.out.println("Pig " + name + " is zhret");
+        } else {
+            System.out.println(";(");
+        }
+    }
+
+
+    public String getName() {
+        return name;
+    }
+    public String toString() {
+        return "Cat " + name;
+    }
+    public String getBreed() {
+        return breed;
+    }
+    public String getEating() {
+        return eating;
+    }
 }

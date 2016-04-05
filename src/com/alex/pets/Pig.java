@@ -4,12 +4,10 @@ public class Pig extends Pet implements Alive {
 
     private String name;
     private String breed;
-    private String eating;
 
-    public Pig(String someName, String breed, String eating) {
+    public Pig(String someName, String breed) {
         this.name = someName;
         this.breed = breed;
-        this.eating = eating;
     }
 
     public void hryukat() {
@@ -46,7 +44,5 @@ public class Pig extends Pet implements Alive {
     public String getBreed() {
         return breed;
     }
-    public String getEating() {
-        return eating;
-    }
+
 }

@@ -3,7 +3,7 @@ package com.alex.pets;
 public class Cat extends Pet implements Alive {
 
     private String name;
-     private String breed;
+    private String breed;
 
     public Cat(String someName, String breed) {
         super();

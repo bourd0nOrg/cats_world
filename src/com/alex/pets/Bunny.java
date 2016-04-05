@@ -13,9 +13,9 @@ public class Bunny extends Pet implements Alive {
         this.color = color;
     }
 
-    public void sleep() {
+    public void jump() {
         if (isAlive) {
-            System.out.println("Bunny " + name + " is sleep");
+            System.out.println("Bunny " + name + " is jumping");
         } else {
             System.out.println(">^.^< RIP");
         }

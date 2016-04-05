@@ -1,15 +1,12 @@
 package com.alex.pets;
 
-/**
- * Created by Андрей on 04.04.2016.
- */
 public class Wolf extends Pet {
 
 public Wolf(){
         super("wolf");
         }
 
-public void catch(Object object)
+public void lovit(Object object)
 
         {
         System.out.println("Wolf lovit"+object.toString());
@@ -29,6 +26,7 @@ public void eat(Object object){
         pig.kill();
         }else{
         System.out.println("!!! I eat only alive pig !!!");
+        }
         }
         }
         }

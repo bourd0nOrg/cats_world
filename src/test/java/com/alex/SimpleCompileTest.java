@@ -3,7 +3,7 @@ package com.alex;
 import com.alex.main.MainClass;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotNull;
 
 public class SimpleCompileTest {
 
@@ -14,6 +14,6 @@ public class SimpleCompileTest {
 
     @Test
     public void fakeTest() {
-        assertTrue(false);
+        assertNotNull(null);
     }
 }

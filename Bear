@@ -1,0 +1,8 @@
+package com.alex.pets;
+
+public class Bear extends Pet package{
+
+public Bear(){
+       
+        }
+        

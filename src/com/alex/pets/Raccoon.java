@@ -1,6 +1,5 @@
 package com.alex.pets;
 
-
 public class Raccoon extends Pet implements Alive {
     public String name;
     public String breed;
@@ -11,7 +10,7 @@ public class Raccoon extends Pet implements Alive {
         this.breed = breed;
     }
 
-    public void rinsing(){
+    public void rinsing() {
         if (isAlive) {
             System.out.println("Raccoon " + name + " is rinsing sock");
         } else {

@@ -1,9 +1,9 @@
 package com.alex.main;
 
 
-import com.alex.pets.Cat;
-import com.alex.pets.Fish;
-import com.alex.pets.Shark;
+        import com.alex.pets.Cat;
+        import com.alex.pets.Fish;
+        import com.alex.pets.Shark;
 
 public class MainClass {
 
@@ -14,7 +14,6 @@ public class MainClass {
 
         Fish karas = new Fish("karas");
         pushok.eat(karas);
-
         Shark shark = new Shark();
         shark.eat(pushok);
 

@@ -9,12 +9,12 @@ public class Shark extends Fish {
     public void eat(Object object) {
         System.out.println("Shark eat " + object.toString());
 
-        if (object instanceof Cat) {
-            Cat cat = (Cat) object;
-            if (cat.isAlive()) {
-                cat.kill();
+        if (object instanceof Bunny) {
+            Bunny bunny = (Bunny) object;
+            if (bunny.isAlive()) {
+                bunny.kill();
             } else {
-                System.out.println("!!! I eat only alive cats !!!");
+                System.out.println("!!! I eat only alive bunny !!!");
             }
         }
     }

@@ -1,8 +1,6 @@
 package com.alex.pets;
 
-/**
- * Created by User on 05.04.2016.
- */
+
 public class Dragon extends Pet implements Alive {
     private String name;
     private String breath;

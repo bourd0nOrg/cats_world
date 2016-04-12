@@ -2,6 +2,7 @@ package com.alex.main;
 
 
 import com.alex.pets.*;
+import com.alex.plants.Grass;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -11,6 +12,7 @@ public class MainClass {
         Cat pushok = new Cat("Pushok", "Pers");
         Fish ocun = new Fish("ocun");
         Pig hryusha = new Pig("hryusha", "kaban");
+        Cow aurora = new Cow("Aurora", "Alpine");
         pushok.eat(ocun);
 
 
@@ -22,6 +24,7 @@ public class MainClass {
 
 
         Fish karas = new Fish("karas");
+
         pushok.eat(karas);
         hryusha.swimming();
         hryusha.zhratb();
@@ -32,5 +35,11 @@ public class MainClass {
         pushok.sleep();
 
         pushok.play();
+
+        aurora.moo();
+
+        aurora.pasture();
+
+        aurora.eat();
     }
 }

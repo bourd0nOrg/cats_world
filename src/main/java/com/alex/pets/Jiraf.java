@@ -18,4 +18,12 @@ public class Jiraf extends Pet implements Alive {
             System.out.println("Jiraf is dead.");
         }
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getLength() {
+        return length;
+    }
 }

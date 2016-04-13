@@ -1,39 +1,39 @@
 package com.alex.pets;
 
-public class Bunny extends Pet implements Alive {
+public class Pantera extends Pet implements Alive {
 
     private String name;
     private String breed;
     private String color;
 
-    public Bunny(String someName, String breed, String color) {
+    public Pantera(String someName, String breed, String color) {
         super();
         this.name = someName;
         this.breed = breed;
         this.color = color;
     }
 
-    public void jump() {
+    public void attack() {
         if (isAlive) {
-            System.out.println("Bunny " + name + " is jumping");
+            System.out.println("Pantera " + name + " is attack");
         } else {
-            System.out.println(">^.^< RIP");
+            System.out.println("-_- RIP");
         }
     }
 
     public void eat(Object object) {
         if (isAlive) {
-            System.out.println("Bunny " + name + " eat " + object);
+            System.out.println("Pantera " + name + " eat " + object);
         } else {
-            System.out.println(">^.^< RIP");
+            System.out.println("-_- RIP");
         }
     }
 
-    public void hide() {
+    public void hunt() {
         if (isAlive) {
-            System.out.println("Bunny " + name + " is hiding");
+            System.out.println("Pantera " + name + " is hunting");
         } else {
-            System.out.println(">^.^< RIP");
+            System.out.println("-_- RIP");
         }
     }
 
@@ -50,7 +50,7 @@ public class Bunny extends Pet implements Alive {
     }
 
     public String toString() {
-        return "Bunny " + name;
+        return "Pantera " + name;
     }
 
 }

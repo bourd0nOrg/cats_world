@@ -1,0 +1,6 @@
+language: java
+script: mvn clean test
+notifications:
+  email: false
+jdk:
+  - oraclejdk8

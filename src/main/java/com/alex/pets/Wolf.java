@@ -9,35 +9,41 @@ public class Wolf extends Pet implements Alive {
         this.breed = breed;
     }
 
-    public void lovit(Object object)
-
-    {
+    public void lovit(Object object) {
         System.out.println("Wolf lovit" + object.toString());
-        if (object instanceof Cat) {
+        if (object instanceof Cat)
+            System.out.println("!!! I kill cat !!!");{
             Cat cat = (Cat) object;
             if (cat.isAlive()) {
                 cat.kill();
             } else {
-
-
-                public void eat (Object object){
-                    System.out.println("Wolf eat " + object.toString());
-
-                    if (object instanceof Pig) {
-                        Pig pig = (Pig) object;
-                        if (pig.isAlive()) {
-                            pig.kill();
-                        } else {
-                            System.out.println("!!! I eat only alive pig !!!");
-                        }
-                    }
-                }
+                System.out.println("!!! Cat is dead !!!");
             }
         }
     }
+
+
+    public void eat(Object object) {
+
+        System.out.println("Wolf eat " + object.toString());
+
+        if (object instanceof Pig)
+            System.out.println("!!! I catch pig !!!");
+        {
+            Pig pig = (Pig) object;
+            if (pig.isAlive()) {
+                pig.kill();
+            } else {
+                System.out.println("!!! I eat only alive pig !!!");
+            }
+        }
+
+    }
+
     public String getName() {
         return name;
     }
+
     public String toString() {
         return "Wolf " + name;
     }
@@ -45,4 +51,3 @@ public class Wolf extends Pet implements Alive {
         return breed;
     }
 }
-

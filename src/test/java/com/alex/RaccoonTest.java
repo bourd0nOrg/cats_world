@@ -8,7 +8,6 @@ import org.junit.Test;
 
 public class RaccoonTest {
     @Test
-
     public void testRaccoonHaveCorrectName() {
         Raccoon raccon = new Raccoon("Jora", "Poloskun");
         Assert.assertEquals("Check raccoon have correct name", "Jora", raccon.getName());

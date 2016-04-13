@@ -8,7 +8,7 @@ public class Cow extends Pet implements Alive {
     private String breed;
     private String weight;
 
-    public Cow(String someName, String breed){
+    public Cow(String someName, String breed) {
         this.name = someName;
         this.breed = breed;
         this.weight = weight;
@@ -38,4 +38,8 @@ public class Cow extends Pet implements Alive {
         }
     }
 
-}
+
+    public String getName() {return name;}
+
+    public String getBreed() {return breed;}
+    }

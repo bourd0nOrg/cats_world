@@ -7,7 +7,7 @@ public class Cat extends Pet implements Alive {
 
     public Cat(String someName, String breed) {
         super();
-        this.name = someName + "asasdasd";
+        this.name = someName;
         this.breed = breed;
     }
 

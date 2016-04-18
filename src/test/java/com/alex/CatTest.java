@@ -18,4 +18,5 @@ public class CatTest {
         Cat cat = new Cat("barsik", "Pers");
         Assert.assertEquals("Pers", cat.getBreed());
     }
+
 }

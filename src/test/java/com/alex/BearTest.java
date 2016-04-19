@@ -13,8 +13,9 @@ public class BearTest {
     @Test
     public void testBearCanSosoatLapy() {
         Bear bear = new Bear("Kopatych", "Grizli", "brown");
-        Lapa lapa = (Lapa) object;
-        Assert.assertTrue("Check bear can sosat lapy", "Kopatych", bear.mochit());
+        Lapa lapa = new Lapa("lapa", "43");
+        Assert.assertEquals("Can bear sosat lapy", true, lapa.wet());
+
     }
 
 

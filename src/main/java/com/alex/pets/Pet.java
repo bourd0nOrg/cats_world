@@ -2,7 +2,7 @@ package com.alex.pets;
 
 public class Pet implements Alive {
 
-    protected boolean isAlive;
+    public boolean isAlive;
 
     public Pet() {
         this.isAlive = true;

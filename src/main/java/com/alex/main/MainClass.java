@@ -41,6 +41,7 @@ public class MainClass {
         Shark shark = new Shark();
         shark.eat(pushok);
         shark.eat(froska);
+
         froska.play();
         pushok.sleep();
 

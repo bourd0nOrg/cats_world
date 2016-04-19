@@ -1,5 +1,7 @@
 package com.alex.pets;
 
+import com.alex.plants.Clover;
+
 public class Bunny extends Pet implements Alive {
 
     private String name;
@@ -21,9 +23,9 @@ public class Bunny extends Pet implements Alive {
         }
     }
 
-    public void eat(Object object) {
+    public void eat(Clover clover) {
         if (isAlive) {
-            System.out.println("Bunny " + name + " eat " + object);
+            System.out.println("Bunny " + name + " eat " + clover);
         } else {
             System.out.println(">^.^< RIP");
         }

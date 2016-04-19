@@ -1,5 +1,6 @@
 package com.alex.plants;
 
+import com.alex.pets.Bunny;
 import com.alex.pets.Cow;
 
 public class Grass {
@@ -16,6 +17,11 @@ public class Grass {
     public void poisoning(Object object) {
         if(object instanceof Cow) {
             System.out.println("Grass " + breed + " food for Cow");
+        } else {
+            System.out.println("Grass " + breed + " poisoning " + object.toString());
+        }
+        if(object instanceof Bunny) {
+            System.out.println("Grass " + breed + " food for Bunny");
         } else {
             System.out.println("Grass " + breed + " poisoning " + object.toString());
         }

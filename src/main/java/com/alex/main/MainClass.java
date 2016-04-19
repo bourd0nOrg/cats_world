@@ -6,6 +6,7 @@ import com.alex.pets.Fish;
 import com.alex.pets.Raccoon;
 import com.alex.pets.Shark;
 import com.alex.pets.*;
+import com.alex.plants.Clover;
 import com.alex.plants.Grass;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -24,6 +25,7 @@ public class MainClass {
 
         Pig hryusha = new Pig("hryusha", "kaban");
         Cow aurora = new Cow("Aurora", "Alpine");
+        Pantera pantera = new Pantera ("Terapan", "Black", "Black");
         pushok.eat(ocun);
 
         Dragon paarthurnax = new Dragon("Paarthurnax", "Fire");
@@ -46,10 +48,10 @@ public class MainClass {
 
         pushok.play();
 
-        aurora.moo();
-
+        Grass grass = new Grass("grass");
         aurora.pasture();
-
-        aurora.eat();
+        aurora.eat(grass);
+        pantera.eat(aurora);
+        aurora.moo();
     }
 }

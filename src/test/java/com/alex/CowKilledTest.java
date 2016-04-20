@@ -1,9 +1,6 @@
 package com.alex;
-
-import com.alex.exceptions.PetIsDeadException;
 import com.alex.pets.Cow;
 import com.alex.pets.Pantera;
-import com.alex.plants.Grass;
 import org.junit.Assert;
 import org.junit.Test;
 

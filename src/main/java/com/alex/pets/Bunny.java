@@ -1,5 +1,6 @@
 package com.alex.pets;
 
+import com.alex.exceptions.PetIsDeadException;
 import com.alex.plants.Clover;
 
 public class Bunny extends Pet implements Alive {
@@ -16,14 +17,24 @@ public class Bunny extends Pet implements Alive {
     }
 
     public void jump() {
-        if (isAlive) {
-            System.out.println("Bunny " + name + " is jumping");
-        } else {
-            System.out.println(">^.^< RIP");
+        {
+            if (!isAlive()) {
+                throw new PetIsDeadException(this);
+            }
+            if (isAlive) {
+                System.out.println("Bunny " + name + " is jumping");
+            } else {
+                System.out.println(">^.^< RIP");
+            }
         }
     }
 
+
     public void eat(Object object) {
+
+        if (!isAlive()) {
+            throw new PetIsDeadException(this);
+        }
         if (object instanceof Clover) {
             Clover clover = (Clover) object;
             clover.poisoning(this);
@@ -34,6 +45,7 @@ public class Bunny extends Pet implements Alive {
             }
         }
     }
+
 
     public void hide() {
         if (isAlive) {

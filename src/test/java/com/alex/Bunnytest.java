@@ -1,6 +1,7 @@
 package com.alex;
 
 
+import com.alex.exceptions.PetIsDeadException;
 import com.alex.pets.Bunny;
 import com.alex.plants.Clover;
 import org.junit.Assert;
@@ -32,6 +33,13 @@ public class Bunnytest {
         Bunny bunny = new Bunny("Bugz", "Shinshilla", "Gray");
         bunny.eat(clover);
         Assert.assertFalse("Check that Clover poisoning Bunny", bunny.isAlive());
+    }
+
+    @Test(expected = PetIsDeadException.class)
+    public void testBunnyIsThrowExpected() {
+        Bunny bunny = new Bunny("Bugz", "Shinshilla", "Gray");
+        bunny.kill();
+        bunny.eat(new Clover("Grass"));
     }
 }
 

@@ -46,11 +46,10 @@ public class MainClass {
         hryusha.swimming();
         hryusha.zhratb();
         hryusha.hryukat();
-        kopatych.sosat();
         Shark shark = new Shark();
         shark.eat(pushok);
         shark.eat(froska);
-        kopatych.mochit(lapa);
+        kopatych.grblzt(lapa);
         froska.play();
         pushok.sleep();
 

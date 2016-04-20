@@ -39,11 +39,11 @@ public class Bear extends Pet implements Alive {
         }
     }
 
-    public void sosat() {
+    public void grblzt(Lapa lapa) {
         if (isAlive) {
-            System.out.println("Bear " + name + " soset lapy");
+            lapa.namochit();
         } else {
-            System.out.println("....dead");
+            System.out.println("Bear " + name + "spit");
         }
     }
 
@@ -55,15 +55,6 @@ public class Bear extends Pet implements Alive {
         }
     }
 
-    public void mochit(Object object) {
-        if (object instanceof Lapa) {
-            Lapa lapa = (Lapa) object;
-            if (lapa.wet())
-            System.out.println("Bear " + name + " sosal lapy i ona stala mokroy");
-        } else {
-            System.out.println("Bear ne spit!!!");
-        }
-    }
 
     public String getName() {
         return name;

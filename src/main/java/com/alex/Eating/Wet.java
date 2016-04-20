@@ -5,5 +5,7 @@ public interface Wet {
 
     void dry();
 
-    boolean wet();
+    void namochit();
+
+    boolean isWet();
 }

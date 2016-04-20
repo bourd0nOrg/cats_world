@@ -16,15 +16,23 @@ public class Shark extends Fish {
             } else {
                 System.out.println("!!! I eat only alive bunny !!!");
             }
-        }
-        if (object instanceof Raccoon) {
+        } else if (object instanceof Raccoon) {
             Raccoon raccoon = (Raccoon) object;
-            if (raccoon.isAlive()){
+            if (raccoon.isAlive()) {
                 raccoon.kill();
-            }else {
+            } else {
                 System.out.println("!!! I eat only alive raccoon !!!");
             }
+        } else if (object instanceof Cat) {
+            Cat cat = (Cat) object;
+            if (cat.isAlive()) {
+                cat.kill();
+            } else {
+                System.out.println("!!! I eat only alive cats !!!");
+            }
+        } else {
+            System.out.println("!!! I don't want eat this !!!");
+
         }
     }
-
 }

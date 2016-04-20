@@ -23,11 +23,15 @@ public class Bunny extends Pet implements Alive {
         }
     }
 
-    public void eat(Clover clover) {
-        if (isAlive) {
-            System.out.println("Bunny " + name + " eat " + clover);
-        } else {
-            System.out.println(">^.^< RIP");
+    public void eat(Object object) {
+        if (object instanceof Clover) {
+            Clover clover = (Clover) object;
+            clover.poisoning(this);
+            if (isAlive) {
+                System.out.println("Bunny " + name + " eat " + clover);
+            } else {
+                System.out.println(">^.^< RIP");
+            }
         }
     }
 

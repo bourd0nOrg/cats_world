@@ -23,7 +23,6 @@ public class Pantera extends Pet implements Alive {
 
     public void eat(Object object) {
         System.out.println("Pantera eat " + object.toString());
-
         if (object instanceof Cow) {
             Cow cow = (Cow) object;
             if (cow.isAlive()) {

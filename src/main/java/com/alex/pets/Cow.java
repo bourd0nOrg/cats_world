@@ -1,5 +1,6 @@
 package com.alex.pets;
 
+import com.alex.exceptions.PetIsDeadException;
 import com.alex.plants.Clover;
 import com.alex.plants.Grass;
 
@@ -25,13 +26,17 @@ public class Cow extends Pet implements Alive {
     }
 
     public void eat(Grass grass) {
-        if (isAlive) {
-            System.out.println(breed + " Cow " + name + " eat " + grass.getBreed());
-        } else {
-            System.out.println("Cow is dead");
+        {
+            if (isAlive()) {
+                throw new PetIsDeadException(this);
+            }
+            if (isAlive) {
+                System.out.println(breed + " Cow " + name + " eat " + grass.getBreed());
+            } else {
+                System.out.println("Cow is dead");
+            }
         }
     }
-
 
     public void moo() {
         if (isAlive) {

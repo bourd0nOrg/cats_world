@@ -1,5 +1,7 @@
 package com.alex.pets;
 
+import com.alex.exceptions.PetIsDeadException;
+
 public class Pantera extends Pet implements Alive {
 
     private String name;

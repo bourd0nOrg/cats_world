@@ -1,5 +1,6 @@
 package com.alex;
 
+import com.alex.exceptions.PetIsDeadException;
 import com.alex.pets.Dragon;
 import com.alex.pets.Sheep;
 import org.junit.Assert;
@@ -24,4 +25,13 @@ public class DragonTest {
         dragon.eat(sheep);
         Assert.assertFalse ("Check that Dragon eat sheep", sheep.isAlive());
     }
+
+    @Test(expected = PetIsDeadException.class)
+    public void PetIsDeadException() {
+        Dragon dragon = new Dragon("Alduin", "Ice");
+        dragon.kill();
+        dragon.fly();
+    }
 }
+
+

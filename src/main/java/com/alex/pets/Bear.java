@@ -5,7 +5,7 @@ import com.alex.Eating.Lapa;
 
 public class Bear extends Pet implements Alive {
 
-    protected String breed;
+    public String breed;
 
     public Bear() {
         super();

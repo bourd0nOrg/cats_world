@@ -10,6 +10,7 @@ public class Lapa implements Wet {
     public Lapa(String someName, String size) {
         this.size = size;
         this.name = someName;
+        this.wet = false;
 
     }
 

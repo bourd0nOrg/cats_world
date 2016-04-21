@@ -14,9 +14,12 @@ public class BearTest {
     public void testBearCanSosoatLapy() {
         Bear bear = new Bear("Kopatych", "Grizli", "brown");
         Lapa lapa = new Lapa("lapa", "43");
-        Assert.assertTrue("Can bear sosat lapy", lapa.isWet());
+        Assert.assertEquals("Can bear sosat lapy", true, lapa.isWet()); /*выдает ошибку*/
 
     }
 
 
 }
+
+/*Assert.assertEquals("Can bear sosat lapy", lapa.wet, lapa.isWet()); - не прокатило*/
+/*Assert.assertEquals("Can bear sosat lapy", true, lapa.isWet()); - тест проходит*/

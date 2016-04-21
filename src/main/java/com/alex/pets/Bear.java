@@ -41,7 +41,7 @@ public class Bear extends Pet implements Alive {
 
     public void grblzt(Lapa lapa) {
         if (isAlive) {
-            lapa.namochit();
+           lapa.namochit();
         } else {
             System.out.println("Bear " + name + "spit");
         }

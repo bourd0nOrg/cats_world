@@ -1,6 +1,6 @@
 package com.alex;
 
-import com.alex.Eating.Lapa;
+import com.alex.eating.Lapa;
 import com.alex.pets.Bear;
 import org.junit.Assert;
 import org.junit.Test;

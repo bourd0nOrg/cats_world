@@ -1,6 +1,6 @@
 package com.alex.pets;
 
-import com.sun.org.apache.xpath.internal.operations.String;
+
 
 public class Pet implements Alive {
 

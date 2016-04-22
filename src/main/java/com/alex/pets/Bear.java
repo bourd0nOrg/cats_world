@@ -1,7 +1,7 @@
 package com.alex.pets;
 
 
-import com.alex.Eating.Lapa;
+import com.alex.eating.Lapa;
 
 public class Bear extends Pet implements Alive {
 

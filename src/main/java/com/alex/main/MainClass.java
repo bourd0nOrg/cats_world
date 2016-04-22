@@ -1,7 +1,7 @@
 package com.alex.main;
 
 
-import com.alex.Eating.Lapa;
+import com.alex.eating.Lapa;
 import com.alex.pets.Cat;
 import com.alex.pets.Fish;
 import com.alex.pets.Raccoon;

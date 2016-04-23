@@ -47,6 +47,14 @@ public class Bear extends Pet implements Alive {
         }
     }
 
+    public void sushit(Lapa lapa){
+        if (lapa.wet = true) {
+            lapa.dry();
+        } else {
+            System.out.println("Bear " + name + " spit");
+        }
+    }
+
     public void attack(Object object) {
         if (isAlive) {
             System.out.println("Bear " + name + " attack " + object);

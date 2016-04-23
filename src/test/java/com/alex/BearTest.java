@@ -18,5 +18,11 @@ public class BearTest {
         Assert.assertTrue("Can bear sosat lapy", lapa.isWet());
     }
 
-
+    @Test
+    public void testCanBearSushitLapy() {
+        Bear bear = new Bear("Kopatych", "Grizli", "brown");
+        Lapa lapa = new Lapa("lapa", "43");
+        bear.sushit(lapa);
+        Assert.assertFalse("Can bear sushit lapy", lapa.isWet());
+    }
 }

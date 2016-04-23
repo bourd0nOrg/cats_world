@@ -7,5 +7,6 @@ public interface Wet {
 
     void namochit();
 
+
     boolean isWet();
 }

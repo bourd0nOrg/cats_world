@@ -2,6 +2,7 @@ package com.alex;
 
 import com.alex.pets.Cat;
 import com.alex.pets.Jiraf;
+import com.alex.pets.Shark;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -19,4 +20,11 @@ public class CatTest {
         Assert.assertEquals("Pers", cat.getBreed());
     }
 
+    @Test
+    public void testCatsDeath() {
+        Cat cat = new Cat("tishka", "dvoroviy");
+        Shark shark = new Shark();
+        shark.eat(cat);
+        Assert.assertFalse("Кошак жив?", cat.isAlive());
+    }
 }

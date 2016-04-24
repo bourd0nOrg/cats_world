@@ -2,6 +2,7 @@ package com.alex.pets;
 
 
 import com.alex.eating.Lapa;
+import com.alex.exceptions.PetIsDeadException;
 
 public class Bear extends Pet implements Alive {
 
@@ -24,13 +25,17 @@ public class Bear extends Pet implements Alive {
     }
 
     public void sleep() {
-        if (isAlive) {
-            System.out.println("Bear " + name + " is sleep");
-        } else {
-            System.out.println("....dead.");
+        {
+            if (isAlive()) {
+                throw new PetIsDeadException(this);
+            }
+            if (isAlive) {
+                System.out.println("Bear " + name + " is sleep");
+            } else {
+                System.out.println("....dead.");
+            }
         }
     }
-
     public void eat(Object object) {
         if (isAlive) {
             System.out.println("Bear " + name + " eat " + object);
@@ -47,13 +52,6 @@ public class Bear extends Pet implements Alive {
         }
     }
 
-    public void sushit(Lapa lapa){
-        if (lapa.wet = true) {
-            lapa.dry();
-        } else {
-            System.out.println("Bear " + name + " spit");
-        }
-    }
 
     public void attack(Object object) {
         if (isAlive) {

@@ -20,11 +20,4 @@ public class CatTest {
         Assert.assertEquals("Pers", cat.getBreed());
     }
 
-    @Test
-    public void testCatsDeath() {
-        Cat cat = new Cat("tishka", "dvoroviy");
-        Shark shark = new Shark();
-        shark.eat(cat);
-        Assert.assertFalse("Кошак жив?", cat.isAlive());
-    }
 }

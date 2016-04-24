@@ -50,7 +50,6 @@ public class MainClass {
         shark.eat(pushok);
         shark.eat(froska);
         kopatych.grblzt(lapa);
-        kopatych.sushit(lapa);
         froska.play();
         pushok.sleep();
 

@@ -2,8 +2,10 @@ package com.alex;
 
 import com.alex.eating.Lapa;
 import com.alex.pets.Bear;
+import com.alex.pets.Dragon;
 import org.junit.Assert;
 import org.junit.Test;
+import com.alex.eating.Wet;
 
 
 public class BearTest {
@@ -22,7 +24,19 @@ public class BearTest {
     public void testCanBearSushitLapy() {
         Bear bear = new Bear("Kopatych", "Grizli", "brown");
         Lapa lapa = new Lapa("lapa", "43");
-        bear.sushit(lapa);
+        if (bear.isAlive()) {
+            lapa.dry();
+        } else {
+            lapa.namochit();
+        }
         Assert.assertFalse("Can bear sushit lapy", lapa.isWet());
+    }
+
+    @Test
+    public void testCatsDeath() {
+        Bear bear = new Bear("Misha", "beliy", "white");
+        Dragon dragon = new Dragon("Hvostoroga", "Fire");
+        dragon.kill(bear);
+        Assert.assertFalse("Медвед жив?", bear.isAlive());
     }
 }

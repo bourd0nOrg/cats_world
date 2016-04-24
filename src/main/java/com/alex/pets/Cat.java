@@ -22,17 +22,13 @@ public class Cat extends Pet implements Alive {
     }
 
     public void eat(Fish fish) {
-        {
-            if (isAlive()) {
-                throw new PetIsDeadException(this);
-            }
-            if (isAlive) {
+        if (isAlive) {
                 System.out.println("Cat " + name + " eat " + fish.getBreed());
             } else {
                 System.out.println(";(");
             }
         }
-    }
+
 
     public void play() {
         if (isAlive) {

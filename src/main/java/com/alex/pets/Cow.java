@@ -26,17 +26,12 @@ public class Cow extends Pet implements Alive {
     }
 
     public void eat(Grass grass) {
-        {
-            if (isAlive()) {
-                throw new PetIsDeadException(this);
-            }
             if (isAlive) {
                 System.out.println(breed + " Cow " + name + " eat " + grass.getBreed());
             } else {
                 System.out.println("Cow is dead");
             }
         }
-    }
 
     public void moo() {
         if (isAlive) {

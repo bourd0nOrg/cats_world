@@ -48,8 +48,8 @@ public class MainClass {
         Grass grass = new Grass("grass");
         aurora.pasture();
         aurora.eat(grass);
-        pantera.eat(aurora);
         aurora.moo();
+        pantera.eat(aurora);
         shark.eat(pushok);
     }
 }

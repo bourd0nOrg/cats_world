@@ -48,6 +48,9 @@ public class Bunny extends Pet implements Alive {
 
 
     public void hide() {
+        if (!isAlive()) {
+            throw new PetIsDeadException(this);
+        }
         if (isAlive) {
             System.out.println("Bunny " + name + " is hiding");
         } else {

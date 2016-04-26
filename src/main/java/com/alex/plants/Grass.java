@@ -12,16 +12,13 @@ public class Grass {
         this.breed = breed;
     }
 
-    public String getBreed() { return breed; }
+    public String getBreed() {
+        return breed;
+    }
 
     public void poisoning(Object object) {
-        if(object instanceof Cow) {
+        if (object instanceof Cow) {
             System.out.println("Grass " + breed + " food for Cow");
-        } else {
-            System.out.println("Grass " + breed + " poisoning " + object.toString());
-        }
-        if(object instanceof Bunny) {
-            System.out.println("Grass " + breed + " food for Bunny");
         } else {
             System.out.println("Grass " + breed + " poisoning " + object.toString());
         }

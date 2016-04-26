@@ -33,7 +33,7 @@ public class BearTest {
     }
 
     @Test
-    public void testCatsDeath() {
+    public void testBearsDeath() {
         Bear bear = new Bear("Misha", "beliy", "white");
         Dragon dragon = new Dragon("Hvostoroga", "Fire");
         dragon.kill(bear);

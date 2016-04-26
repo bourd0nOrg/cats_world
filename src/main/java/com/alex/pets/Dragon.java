@@ -19,19 +19,17 @@ public class Dragon extends Pet implements Alive {
 
         if (isAlive) {
             System.out.println("Dragon " + name + " is flying");
-        } else {
-
-            System.out.println("Dragon " + name + " killed by Dovahkiin");
         }
 
     }
 
     public void eat(Sheep sheep) {
+        if (!isAlive())
+            throw new PetIsDeadException(this);
+
         if (isAlive) {
             sheep.kill();
             System.out.println("Dragon " + name + " eat " + Sheep.getName());
-        } else {
-            System.out.println("Dragon " + name + " is hungry(pls feed me :C)");
         }
     }
 

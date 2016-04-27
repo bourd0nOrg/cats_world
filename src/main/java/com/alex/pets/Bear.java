@@ -25,17 +25,14 @@ public class Bear extends Pet implements Alive {
     }
 
     public void sleep() {
-        {
-            if (isAlive()) {
+
+            if (!isAlive()) {
                 throw new PetIsDeadException(this);
             }
-            if (isAlive) {
-                System.out.println("Bear " + name + " is sleep");
-            } else {
-                System.out.println("....dead.");
+             System.out.println("Bear " + name + " is sleep");
             }
-        }
-    }
+
+
     public void eat(Object object) {
         if (isAlive) {
             System.out.println("Bear " + name + " eat " + object);

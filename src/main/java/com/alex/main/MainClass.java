@@ -36,6 +36,11 @@ public class MainClass {
         paarthurnax.eat(dolly);
         paarthurnax.fly();
 
+        Wolf sif = new Wolf("Sif","Demon");
+
+        sif.lovit(pushok);
+        sif.eat(hryusha);
+
         Fish karas = new Fish("karas");
 
         pushok.eat(karas);

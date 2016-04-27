@@ -18,9 +18,5 @@ public class CowTest {
         Assert.assertEquals("dexter", cow.getBreed());
     }
 
-    @Test
-    public void testCowHaveCorrectBreed() {
-        Cow cow = new Cow("alpha", "dexter");
-        Assert.assertEquals("", cow.get());
-    }
+
 }

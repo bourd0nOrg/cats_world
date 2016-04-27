@@ -35,6 +35,7 @@ public class MainClass {
 
         pitch.hide();
         pitch.eat(new Clover("Grass"));
+
         Fish karas = new Fish("karas");
 
         pushok.eat(karas);

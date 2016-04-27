@@ -25,6 +25,7 @@ public class Clover extends Grass {
         if (object instanceof Bunny) {
             Bunny bunny = (Bunny) object;
             if (bunny.isAlive()) {
+                System.out.println(">^.^< RIP");
                 bunny.kill();
             } else {
                 System.out.println("Bunny explodes");

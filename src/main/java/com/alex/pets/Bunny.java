@@ -17,15 +17,12 @@ public class Bunny extends Pet implements Alive {
     }
 
     public void jump() {
-        {
-            if (!isAlive()) {
-                throw new PetIsDeadException(this);
-            }
-            if (isAlive) {
-                System.out.println("Bunny " + name + " is jumping");
-            } else {
-                System.out.println(">^.^< RIP");
-            }
+
+        if (!isAlive()) {
+            System.out.println(">^.^< RIP");
+            throw new PetIsDeadException(this);
+        } else {
+            System.out.println("Bunny " + name + " is jumping");
         }
     }
 
@@ -34,14 +31,11 @@ public class Bunny extends Pet implements Alive {
 
         if (!isAlive()) {
             throw new PetIsDeadException(this);
-        }
-        if (object instanceof Clover) {
-            Clover clover = (Clover) object;
-            clover.poisoning(this);
-            if (isAlive) {
+        } else {
+            if (object instanceof Clover) {
+                Clover clover = (Clover) object;
+                clover.poisoning(this);
                 System.out.println("Bunny " + name + " eat " + clover);
-            } else {
-                System.out.println(">^.^< RIP");
             }
         }
     }
@@ -49,12 +43,10 @@ public class Bunny extends Pet implements Alive {
 
     public void hide() {
         if (!isAlive()) {
-            throw new PetIsDeadException(this);
-        }
-        if (isAlive) {
-            System.out.println("Bunny " + name + " is hiding");
-        } else {
             System.out.println(">^.^< RIP");
+            throw new PetIsDeadException(this);
+        } else {
+            System.out.println("Bunny " + name + " is hiding");
         }
     }
 

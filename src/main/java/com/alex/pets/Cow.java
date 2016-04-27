@@ -18,39 +18,37 @@ public class Cow extends Pet implements Alive {
 
 
     public void pasture() {
-            if (isAlive()) {
-                throw new PetIsDeadException(this);
-            }
-            if (isAlive) {
-                System.out.println(breed + " Cow " + name + " is pasture");
-            }
+        if (!isAlive()) {
+            throw new PetIsDeadException(this);
         }
+        System.out.println(breed + " Cow " + name + " is pasture");
+    }
+
 
     public void eat(Grass grass) {
-        if (isAlive) {
-            System.out.println(breed + " Cow " + name + " eat " + grass.getBreed());
+        if (!isAlive) {
             throw new PetIsDeadException(this);
-        } else {
-            System.out.println("Cow is dead");
-            if (isAlive()) {
-                throw new PetIsDeadException(this);
-            }
-            if (isAlive) {
-                System.out.println(breed + " Cow " + name + " eat " + grass.getBreed());
-            }
         }
+        System.out.println(breed + " Cow " + name + " eat " + grass.getBreed());
     }
+
 
     public void moo() {
-            if (isAlive()) {
-                throw new PetIsDeadException(this);
-            }
-            if (isAlive) {
-                System.out.println(breed + " Cow " + name + " is moo");
-            }
+        if (!isAlive()) {
+            throw new PetIsDeadException(this);
         }
-
-    public String getName() {return name;}
-    public String toString() {return "Cow " + name;}
-    public String getBreed() {return breed;}
+        System.out.println(breed + " Cow " + name + " is moo");
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String toString() {
+        return "Cow " + name;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+}

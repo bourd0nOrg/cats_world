@@ -38,6 +38,6 @@ public class BearTest {
         Bear bear = new Bear("Misha", "beliy", "white");
         Dragon dragon = new Dragon("Hvostoroga", "Fire");
         dragon.kill(bear);
-        bear.grblzt(new Lapa("asd", "asd"));
+        bear.grblzt(new Lapa("lapa", "43"));
     }
 }

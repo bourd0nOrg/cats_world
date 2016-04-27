@@ -10,7 +10,7 @@ public class Bear extends Pet implements Alive {
 
     public Bear() {
         super();
-            }
+    }
 
 
     private String name;
@@ -26,36 +26,34 @@ public class Bear extends Pet implements Alive {
 
     public void sleep() {
 
-            if (!isAlive()) {
-                throw new PetIsDeadException(this);
-            }
-             System.out.println("Bear " + name + " is sleep");
-            }
+        if (!isAlive()) {
+            throw new PetIsDeadException(this);
+        }
+        System.out.println("Bear " + name + " is sleep");
+    }
 
 
     public void eat(Object object) {
-        if (isAlive) {
-            System.out.println("Bear " + name + " eat " + object);
-        } else {
-            System.out.println("....dead");
+        if (!isAlive()) {
+            throw new PetIsDeadException(this);
         }
+        System.out.println("Bear " + name + " eat " + object);
     }
 
+
     public void grblzt(Lapa lapa) {
-        if (isAlive) {
-           lapa.namochit();
-        } else {
-            System.out.println("Bear " + name + "spit");
+        if (!isAlive()) {
+            throw new PetIsDeadException(this);
         }
+        lapa.namochit();
     }
 
 
     public void attack(Object object) {
-        if (isAlive) {
-            System.out.println("Bear " + name + " attack " + object);
-        } else {
-            System.out.println("....dead");
+        if (!isAlive()) {
+            throw new PetIsDeadException(this);
         }
+        System.out.println("Bear " + name + " attack " + object);
     }
 
 
@@ -71,6 +69,6 @@ public class Bear extends Pet implements Alive {
         return color;
     }
 
-    }
+}
 
 

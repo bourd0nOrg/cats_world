@@ -1,6 +1,7 @@
 package com.alex;
 
 import com.alex.eating.Lapa;
+import com.alex.exceptions.PetIsDeadException;
 import com.alex.pets.Bear;
 import com.alex.pets.Dragon;
 import org.junit.Assert;
@@ -32,11 +33,11 @@ public class BearTest {
         Assert.assertFalse("Can bear sushit lapy", lapa.isWet());
     }
 
-    @Test
+    @Test(expected = PetIsDeadException.class)
     public void testBearsDeath() {
         Bear bear = new Bear("Misha", "beliy", "white");
         Dragon dragon = new Dragon("Hvostoroga", "Fire");
         dragon.kill(bear);
-        Assert.assertFalse("Медвед жив?", bear.isAlive());
+        bear.grblzt(new Lapa("asd", "asd"));
     }
 }

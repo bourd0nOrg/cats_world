@@ -19,13 +19,10 @@ public class Bunny extends Pet implements Alive {
     public void jump() {
 
         if (!isAlive()) {
-            System.out.println(">^.^< RIP");
-            throw new PetIsDeadException(this);
-        } else {
             System.out.println("Bunny " + name + " is jumping");
+            throw new PetIsDeadException(this);
         }
     }
-
 
     public void eat(Object object) {
 
@@ -43,10 +40,8 @@ public class Bunny extends Pet implements Alive {
 
     public void hide() {
         if (!isAlive()) {
-            System.out.println(">^.^< RIP");
-            throw new PetIsDeadException(this);
-        } else {
             System.out.println("Bunny " + name + " is hiding");
+            throw new PetIsDeadException(this);
         }
     }
 

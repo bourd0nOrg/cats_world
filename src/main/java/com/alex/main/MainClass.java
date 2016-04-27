@@ -31,11 +31,13 @@ public class MainClass {
         Cow aurora = new Cow("Aurora", "Alpine");
         Pantera pantera = new Pantera ("Terapan", "Black", "Black");
         pushok.eat(ocun);
-
+        Bunny pitch = new Bunny("Pitch", "Shinshilla", "Gray");
         Dragon paarthurnax = new Dragon("Paarthurnax", "Fire");
         Sheep dolly = new Sheep("Dolly");
         paarthurnax.eat(dolly);
         paarthurnax.fly();
+        pitch.hide();
+        pitch.eat(new Clover("Grass"));
 
         Wolf sif = new Wolf("Sif","Demon");
 
@@ -52,6 +54,7 @@ public class MainClass {
 
         Shark shark = new Shark();
         shark.eat(froska);
+
         froska.play();
         pushok.sleep();
 

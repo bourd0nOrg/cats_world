@@ -1,6 +1,7 @@
 package com.alex.pets;
 
 import com.alex.exceptions.PetIsDeadException;
+import com.alex.plants.Dyplo;
 
 public class Squirrel extends Pet implements Alive {
 
@@ -31,11 +32,16 @@ public class Squirrel extends Pet implements Alive {
         }
     }
 
-    public void fold() {
+    public void store(Object object) {
         if (!isAlive) {
+            System.out.println("Squirrel distress");
             throw new PetIsDeadException(this);
         } else {
-            System.out.println("Squirrel " + name + " is folding");
+            if (object instanceof Dyplo) {
+                Dyplo dyplo = (Dyplo) object;
+                dyplo.store(this);
+                System.out.println("The squirrel " + name + " stores nuts in a hollow");
+            }
         }
     }
 

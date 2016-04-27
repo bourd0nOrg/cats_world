@@ -3,22 +3,22 @@ package com.alex.plants;
 
 import com.alex.pets.Squirrel;
 
-public class Dyplo {
-        protected String breed;
-    public Dyplo(String breed) {
-        super();
-        this.breed = breed;
+
+public class Dyplo extends Tree {
+    public Dyplo(String dyplo) {
+        super("dyplo");
     }
 
-    public  String getBreed() { return  breed; }
-
-    public void poisoning(Object object){
-        if(object instanceof Squirrel){
-            System.out.println("Dyplo " + breed + "ckladuvat squirrel");
-        }else {
-            System.out.println(object.toString() + "no ckladuvat squirrel.");
+    public void store(Object object) {
+        System.out.println("Nuts are stored in duplicate of a " + object.toString());
+        if (object instanceof Squirrel) {
+            Squirrel squirrel = (Squirrel) object;
+            if (squirrel.isAlive()) {
+                System.out.println("empty doubles - Squirrel died of starvation");
+                squirrel.kill();
+            } else {
+                System.out.println("Squirrel distress");
+            }
         }
     }
-
 }
-

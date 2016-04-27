@@ -1,5 +1,8 @@
 package com.alex.main;
 
+        import com.alex.pets.Cat;
+        import com.alex.pets.Fish;
+        import com.alex.pets.Shark;
 
 import com.alex.pets.Cat;
 import com.alex.pets.Fish;
@@ -9,6 +12,7 @@ import com.alex.pets.*;
 import com.alex.plants.Grass;
 
 import java.util.concurrent.atomic.AtomicReference;
+
 
 public class MainClass {
 
@@ -40,9 +44,11 @@ public class MainClass {
         Fish karas = new Fish("karas");
 
         pushok.eat(karas);
+
         hryusha.swimming();
         hryusha.zhratb();
         hryusha.hryukat();
+
         Shark shark = new Shark();
         shark.eat(pushok);
         shark.eat(froska);
@@ -57,6 +63,4 @@ public class MainClass {
 
         aurora.eat();
     }
-
-
 }

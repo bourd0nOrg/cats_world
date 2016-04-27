@@ -1,6 +1,7 @@
 package com.alex;
 
 import com.alex.eda.Ikra;
+import com.alex.exceptions.PetIsDeadException;
 import com.alex.pets.Fish;
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,9 +9,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Студент on 20.04.2016.
- */
+
 public class FishTest {
 
 
@@ -21,4 +20,16 @@ public class FishTest {
         fish.metatIkra(ikra);
         Assert.assertFalse(ikra.isEst());
     }
+
+
+    @Test(expected = PetIsDeadException.class)
+    public void PetIsDeadException()
+            throws Exception {
+        Fish fish = new Fish("ocun");
+        Ikra ikra = new Ikra("ikra");
+        fish.kill();
+        fish.metatIkra(ikra);
+        Assert.assertFalse(ikra.isEst());
+    }
+    
 }

@@ -1,6 +1,7 @@
 package com.alex.pets;
 
 import com.alex.eda.Ikra;
+import com.alex.exceptions.PetIsDeadException;
 
 public class Fish extends Pet implements Alive {
 
@@ -18,6 +19,9 @@ public class Fish extends Pet implements Alive {
     }
 
     public void eat(Object object) {
+        if (!isAlive())
+            throw new PetIsDeadException(this);
+
         if (object instanceof Cat) {
             System.out.println("!!! Fish " + breed + " can't eat cat");
 
@@ -32,6 +36,8 @@ public class Fish extends Pet implements Alive {
         }
     }
     public void metatIkra(Object object){
+    if (!isAlive())
+            throw new PetIsDeadException(this);
         if (object instanceof Ikra) {
             System.out.println("Fish otlozila ikru");
             Ikra ikra = (Ikra) object;

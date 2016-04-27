@@ -30,7 +30,6 @@ public class MainClass {
 
         Dragon paarthurnax = new Dragon("Paarthurnax", "Fire");
         Sheep dolly = new Sheep("Dolly");
-
         paarthurnax.eat(dolly);
         paarthurnax.fly();
 
@@ -41,17 +40,16 @@ public class MainClass {
         hryusha.zhratb();
         hryusha.hryukat();
         Shark shark = new Shark();
-        shark.eat(pushok);
         shark.eat(froska);
         froska.play();
         pushok.sleep();
 
         pushok.play();
-
         Grass grass = new Grass("grass");
         aurora.pasture();
         aurora.eat(grass);
-        pantera.eat(aurora);
         aurora.moo();
+        pantera.eat(aurora);
+        shark.eat(pushok);
     }
 }

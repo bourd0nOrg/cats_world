@@ -29,6 +29,18 @@ public class Dragon extends Pet implements Alive {
             System.out.println("Dragon " + name + " eat " + Sheep.getName());
     }
 
+    public void kill (Object object) {
+        if (object instanceof Bear) {
+            Bear bear = (Bear) object;
+            if (bear.isAlive()) {
+                bear.kill();
+            } else {
+                System.out.println("Bears never die!!!");
+            }
+
+        }
+    }
+
     public String getName() {
         return name;
     }

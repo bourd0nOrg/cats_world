@@ -9,13 +9,13 @@ public class ToxicTree extends Tree{
         super("toxic tree");
     }
 
-    public void poisoning(Object object){
+    public void poison(Object object){
         System.out.println("Toxic tree poisoned " + object.toString());
 
         if (object instanceof Jiraf){
             Jiraf jiraf = (Jiraf) object;
             if (jiraf.isAlive()){
-                jiraf.kill();
+                jiraf.poison();
             } else {
                 System.out.println("The dead do not eat");
             }

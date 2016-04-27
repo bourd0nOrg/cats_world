@@ -1,6 +1,7 @@
 package com.alex.main;
 
 
+import com.alex.eda.Ikra;
 import com.alex.pets.Cat;
 import com.alex.pets.Fish;
 import com.alex.pets.Raccoon;

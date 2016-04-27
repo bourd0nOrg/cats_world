@@ -1,6 +1,6 @@
 package com.alex;
 
-import com.alex.eating.Lapa;
+import com.alex.Eating.Lapa;
 import com.alex.exceptions.PetIsDeadException;
 import com.alex.pets.Bear;
 import com.alex.pets.Dragon;

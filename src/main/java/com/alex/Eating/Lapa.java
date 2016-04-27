@@ -1,4 +1,4 @@
-package com.alex.eating;
+package com.alex.Eating;
 
 
 public class Lapa implements Wet {

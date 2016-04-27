@@ -32,9 +32,13 @@ public class MainClass {
 
         paarthurnax.eat(dolly);
         paarthurnax.fly();
-
         pitch.hide();
         pitch.eat(new Clover("Grass"));
+
+        Wolf sif = new Wolf("Sif","Demon");
+
+        sif.lovit(pushok);
+        sif.eat(hryusha);
 
         Fish karas = new Fish("karas");
 
@@ -57,4 +61,6 @@ public class MainClass {
 
         aurora.eat();
     }
+
+
 }

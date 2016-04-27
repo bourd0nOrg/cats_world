@@ -8,14 +8,14 @@ public class CowTest {
 
     @Test
     public void testCowHaveCorrectName() {
-        Cow cow = new Cow("alpha", "dexter");
-        Assert.assertEquals("Check cow have correct name", "alpha", cow.getName());
+        Cow cow = new Cow("aurora", "alpen");
+        Assert.assertEquals("Check cow have correct name", "aurora", cow.getName());
     }
 
     @Test
     public void testCowHaveCorrectBreed() {
-        Cow cow = new Cow("alpha", "dexter");
-        Assert.assertEquals("dexter", cow.getBreed());
+        Cow cow = new Cow("aurora", "alpen");
+        Assert.assertEquals("alpen", cow.getBreed());
     }
 
 

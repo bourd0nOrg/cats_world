@@ -16,10 +16,8 @@ public class Dragon extends Pet implements Alive {
 
         if (!isAlive())
             throw new PetIsDeadException(this);
+        System.out.println("Dragon " + name + " is flying");
 
-        if (isAlive) {
-            System.out.println("Dragon " + name + " is flying");
-        }
 
     }
 
@@ -27,10 +25,8 @@ public class Dragon extends Pet implements Alive {
         if (!isAlive())
             throw new PetIsDeadException(this);
 
-        if (isAlive) {
             sheep.kill();
             System.out.println("Dragon " + name + " eat " + Sheep.getName());
-        }
     }
 
     public String getName() {

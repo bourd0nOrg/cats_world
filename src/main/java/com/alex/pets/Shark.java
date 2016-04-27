@@ -9,26 +9,14 @@ public class Shark extends Fish {
     public void eat(Object object) {
         System.out.println("Shark eat " + object.toString());
 
-        if (object instanceof Bunny) {
-            Bunny bunny = (Bunny) object;
-            if (bunny.isAlive()) {
-                bunny.kill();
+        if (object instanceof Bunny || object instanceof Cat || object instanceof Raccoon) {
+            Pet pet = (Pet) object;
+            if (pet.isAlive()) {
+                pet.kill();
+
             } else {
-                System.out.println("!!! I eat only alive bunny !!!");
-            }
-        } else if (object instanceof Raccoon) {
-            Raccoon raccoon = (Raccoon) object;
-            if (raccoon.isAlive()) {
-                raccoon.kill();
-            } else {
-                System.out.println("!!! I eat only alive raccoon !!!");
-            }
-        } else if (object instanceof Cat) {
-            Cat cat = (Cat) object;
-            if (cat.isAlive()) {
-                cat.kill();
-            } else {
-                System.out.println("!!! I eat only alive cats !!!");
+                System.out.println("!!! I eat only alive pets !!!");
+
             }
         } else {
             System.out.println("!!! I don't want eat this !!!");
@@ -36,3 +24,5 @@ public class Shark extends Fish {
         }
     }
 }
+
+

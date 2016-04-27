@@ -1,5 +1,7 @@
 package com.alex.pets;
 
+import com.alex.exceptions.PetIsDeadException;
+
 import com.alex.plants.Grass;
 
 public class Cow extends Pet implements Alive {
@@ -14,32 +16,39 @@ public class Cow extends Pet implements Alive {
         this.weight = weight;
     }
 
-    public void moo() {
-        if (isAlive) {
-            System.out.println(breed + " Cow " + name + " is moo");
-        } else {
-            System.out.println("Cow explodes");
-        }
-    }
 
     public void pasture() {
-        if (isAlive) {
-            System.out.println(breed + " Cow " + name + " is pasture");
-        } else {
-            System.out.println("Cow explodes");
+        if (!isAlive()) {
+            throw new PetIsDeadException(this);
         }
+        System.out.println(breed + " Cow " + name + " is pasture");
     }
 
-    public void eat() {
-        if (isAlive) {
-            System.out.println(breed + " Cow " + name + " eat");
-        } else {
-            System.out.println("Cow explodes");
+
+    public void eat(Grass grass) {
+        if (!isAlive) {
+            throw new PetIsDeadException(this);
         }
+        System.out.println(breed + " Cow " + name + " eat " + grass.getBreed());
     }
 
 
-    public String getName() {return name;}
-
-    public String getBreed() {return breed;}
+    public void moo() {
+        if (!isAlive()) {
+            throw new PetIsDeadException(this);
+        }
+        System.out.println(breed + " Cow " + name + " is moo");
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String toString() {
+        return "Cow " + name;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+}

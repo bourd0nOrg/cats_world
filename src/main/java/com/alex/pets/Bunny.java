@@ -19,14 +19,18 @@ public class Bunny extends Pet implements Alive {
     public void jump() {
 
         if (!isAlive()) {
-            System.out.println("Bunny " + name + " is jumping");
+            System.out.println(">^.^< RIP");
             throw new PetIsDeadException(this);
+        } else {
+            System.out.println("Bunny " + name + " is jumping");
         }
     }
+
 
     public void eat(Object object) {
 
         if (!isAlive()) {
+            System.out.println(">^.^< RIP");
             throw new PetIsDeadException(this);
         } else {
             if (object instanceof Clover) {
@@ -40,8 +44,10 @@ public class Bunny extends Pet implements Alive {
 
     public void hide() {
         if (!isAlive()) {
-            System.out.println("Bunny " + name + " is hiding");
+            System.out.println(">^.^< RIP");
             throw new PetIsDeadException(this);
+        } else {
+            System.out.println("Bunny " + name + " is hiding");
         }
     }
 

@@ -4,15 +4,13 @@ package com.alex.main;
         import com.alex.pets.Fish;
         import com.alex.pets.Shark;
 
-import com.alex.pets.Cat;
-import com.alex.pets.Fish;
-import com.alex.pets.Raccoon;
-import com.alex.pets.Shark;
-import com.alex.pets.*;
+import com.alex.eat.Lapa;
+        import com.alex.pets.Raccoon;
+        import com.alex.pets.*;
+import com.alex.pets.Bear;
 import com.alex.plants.Clover;
 import com.alex.plants.Grass;
 
-import java.util.concurrent.atomic.AtomicReference;
 
 
 public class MainClass {
@@ -20,12 +18,15 @@ public class MainClass {
     public static void main(String[] args) {
         Cat pushok = new Cat("Pushok", "Pers");
         Fish ocun = new Fish("ocun");
+        Lapa lapa = new Lapa("lapa", "53");
 
         Raccoon froska = new Raccoon("Froska", "Barbados");
         pushok.eat(ocun);
         froska.play();
         froska.rinsing();
         froska.steal();
+
+        Bear kopatych = new Bear("Kopatych", "Grizli", "brown");
 
         Pig hryusha = new Pig("hryusha", "kaban");
         Cow aurora = new Cow("Aurora", "Alpine");
@@ -54,6 +55,7 @@ public class MainClass {
 
         Shark shark = new Shark();
         shark.eat(froska);
+        kopatych.grblzt(lapa);
 
         froska.play();
         pushok.sleep();

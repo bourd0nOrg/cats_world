@@ -6,6 +6,7 @@ import com.alex.pets.Bear;
 import com.alex.pets.Dragon;
 import org.junit.Assert;
 import org.junit.Test;
+import com.alex.eat.Wet;
 
 
 public class BearTest {

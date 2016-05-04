@@ -1,12 +1,11 @@
 package com.alex;
 
-import com.alex.eating.Lapa;
+import com.alex.Eating.Lapa;
 import com.alex.exceptions.PetIsDeadException;
 import com.alex.pets.Bear;
 import com.alex.pets.Dragon;
 import org.junit.Assert;
 import org.junit.Test;
-import com.alex.eating.Wet;
 
 
 public class BearTest {

@@ -2,6 +2,7 @@ package com.alex;
 
 import com.alex.pets.Cat;
 import com.alex.pets.Jiraf;
+import com.alex.pets.Shark;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,4 +19,5 @@ public class CatTest {
         Cat cat = new Cat("barsik", "Pers");
         Assert.assertEquals("Pers", cat.getBreed());
     }
+
 }

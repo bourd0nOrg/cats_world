@@ -1,5 +1,7 @@
 package com.alex.pets;
 
+import com.alex.exceptions.PetIsDeadException;
+
 public class Cat extends Pet implements Alive {
 
     private String name;
@@ -21,11 +23,12 @@ public class Cat extends Pet implements Alive {
 
     public void eat(Fish fish) {
         if (isAlive) {
-            System.out.println("Cat " + name + " eat " + fish.getBreed());
-        } else {
-            System.out.println(";(");
+                System.out.println("Cat " + name + " eat " + fish.getBreed());
+            } else {
+                System.out.println(";(");
+            }
         }
-    }
+
 
     public void play() {
         if (isAlive) {

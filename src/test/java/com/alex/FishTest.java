@@ -31,5 +31,5 @@ public class FishTest {
         fish.metatIkra(ikra);
         Assert.assertFalse(ikra.isEst());
     }
-    
+
 }

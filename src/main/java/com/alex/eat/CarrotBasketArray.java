@@ -16,8 +16,8 @@ public class CarrotBasketArray {
 
     public void addCarrot(Carrot carrot) {
         if (index < size - 1) {
-            this.carrots[index] = carrot;
             index = index + 1;
+            this.carrots[index] = carrot;
         } else {
             System.out.println("Sorry basket is full!");
         }

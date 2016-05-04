@@ -1,8 +1,6 @@
 package com.alex.pets;
 
-/**
- * Created by User on 05.04.2016.
- */
+
 public class Sheep extends Pet implements Alive {
     private static String name;
 
@@ -15,6 +13,7 @@ public class Sheep extends Pet implements Alive {
     }
 
     public void eat(Object object) {
+
         if (object instanceof Dragon) {
             System.out.println("Sheep" + name + "can't eat dragon");
         } else {

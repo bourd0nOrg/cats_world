@@ -29,8 +29,9 @@ public class DyploNutsArray {
             throw new IllegalStateException("Sorry , no nut in dyplo");
         }
     }
-    public Nuts[] getAllNuts(){
-        return  nuts;
+
+    public Nut[] getAllNuts() {
+        return nuts;
     }
 }
 

@@ -6,14 +6,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class DyploNutsArrayTest {
-    public void  testAddNutTest{
-        @Test
-                public void testAddNutToOneElementDyplo() {
-            DyploNutsArray dyploArray = new DyploNutsArray(1);
-            Nut nut = new Nut (10, "kedr");
-            dyploArray.addNut(nut);
-            Nut[] nuts = dyploArray.getAllNuts();
-            Assert.asserEquals("Size should be 1", 1,nut.length);
-        }
+    @Test
+    public void testAddNutToOneElementDyplo() {
+        DyploNutsArray dyploArray = new DyploNutsArray(1);
+        Nut nut = new Nut(10, "kedr");
+        dyploArray.addNut(nut);
+        Nut[] nuts = dyploArray.getAllNuts();
+        Assert.assertEquals("Size should be 1", 1, nuts.length);
     }
 }

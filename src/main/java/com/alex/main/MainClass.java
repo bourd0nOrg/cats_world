@@ -4,12 +4,9 @@ package com.alex.main;
         import com.alex.pets.Fish;
         import com.alex.pets.Shark;
 
-import com.alex.eating.Lapa;
-import com.alex.pets.Cat;
-import com.alex.pets.Fish;
-import com.alex.pets.Raccoon;
-import com.alex.pets.Shark;
-import com.alex.pets.*;
+import com.alex.eat.Lapa;
+        import com.alex.pets.Raccoon;
+        import com.alex.pets.*;
 import com.alex.pets.Bear;
 import com.alex.plants.Clover;
 import com.alex.plants.Grass;

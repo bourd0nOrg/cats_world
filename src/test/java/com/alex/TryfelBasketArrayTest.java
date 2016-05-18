@@ -2,7 +2,6 @@ package com.alex;
 
 import com.alex.eat.Tryfel;
 import com.alex.eat.TryfelBasketArray;
-import com.sun.xml.internal.bind.v2.runtime.IllegalAnnotationException;
 import org.junit.Assert;
 import org.junit.Test;
 

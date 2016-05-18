@@ -53,21 +53,50 @@ public class CabbageBasketArrayTest {
     @Test
     public void testAddCabbageToFullBasket() {
         CabbageBasketArray basketArray = new CabbageBasketArray(3);
+
         Cabbage greenCabbage = new Cabbage(1, "green");
         Cabbage multicolorCabbage = new Cabbage(2, "multicolor");
         Cabbage yellowCabbage = new Cabbage(3, "yellow");
         Cabbage blueCabbage = new Cabbage(4, "blue");
 
-        basketArray.addCabbage(new Cabbage(1, "green"));
-        basketArray.addCabbage(new Cabbage(2, "multicolor"));
-        basketArray.addCabbage(new Cabbage(3, "yellow"));
-        basketArray.addCabbage(new Cabbage(4, "blue"));
+        basketArray.addCabbage(greenCabbage);
+        basketArray.addCabbage(multicolorCabbage);
+        basketArray.addCabbage(yellowCabbage);
+        basketArray.addCabbage(blueCabbage);
 
         Assert.assertEquals(3, basketArray.getCurrentSize());
+
         Cabbage[] cabbages = basketArray.getCabbages();
         Assert.assertEquals(greenCabbage, cabbages[0]);
         Assert.assertEquals(multicolorCabbage, cabbages[1]);
         Assert.assertEquals(yellowCabbage, cabbages[2]);
-        Assert.assertEquals(blueCabbage, cabbages[3]);
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void testGetCabbageFromEmptyBasket() {
+        CabbageBasketArray basketArray = new CabbageBasketArray(3);
+        basketArray.getCabbage();
+    }
+
+    @Test
+
+    public void testGetCabbageEmptyBasket(){
+        CabbageBasketArray basketArray = new CabbageBasketArray(3);
+
+        Cabbage greenCabbage = new Cabbage(1, "green");
+        Cabbage multicolorCabbage = new Cabbage(2, "multicolor");
+        Cabbage yellowCabbage = new Cabbage(3, "yellow");
+
+        basketArray.addCabbage(greenCabbage);
+        basketArray.addCabbage(multicolorCabbage);
+        basketArray.addCabbage(yellowCabbage);
+
+        Assert.assertEquals(3, basketArray.getCurrentSize());
+
+        Assert.assertEquals(yellowCabbage, basketArray.getCabbage());
+        Assert.assertEquals(multicolorCabbage, basketArray.getCabbage());
+        Assert.assertEquals(greenCabbage, basketArray.getCabbage());
+
+    }
+
 }

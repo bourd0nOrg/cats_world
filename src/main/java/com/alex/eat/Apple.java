@@ -18,4 +18,11 @@ public class Apple {
         return color;
     }
 
+    @Override
+    public String toString() {
+        return "Apple{" +
+                "weight=" + weight +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }

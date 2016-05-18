@@ -76,4 +76,28 @@ public class AppleBasketArrayTest {
         basketArray.getApple();
     }
 
+    @Test
+    public void testGetApples() {
+        AppleBasketArray basketArray = new AppleBasketArray(3);
+
+        Apple greenApple = new Apple(1, "green");
+        Apple redApple = new Apple(2, "red");
+        Apple yellowApple = new Apple(3, "yellow");
+        Apple blueApple = new Apple(4, "blue");
+
+        basketArray.addApple(greenApple);
+        basketArray.addApple(redApple);
+        basketArray.addApple(yellowApple);
+        basketArray.addApple(blueApple);
+
+        Assert.assertEquals(3, basketArray.getCurrentSize());
+
+        Assert.assertEquals(yellowApple, basketArray.getApple());
+        Assert.assertEquals(redApple, basketArray.getApple());
+        Assert.assertEquals(greenApple, basketArray.getApple());
+
+        Assert.assertEquals(0, basketArray.getCurrentSize());
+
+    }
+
 }

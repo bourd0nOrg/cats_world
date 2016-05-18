@@ -79,16 +79,17 @@ public class TryfelBasketArrayTest {
     public void testAddandGetTryfels() {
         TryfelBasketArray basketArray = new TryfelBasketArray(3);
         Tryfel whiteTryfel = new Tryfel(1, 5000, "white");
-        Tryfel greenTryfel = new Tryfel(1, 5000, "white");
-        Tryfel brownTryfel = new Tryfel(1, 5000, "white");
-        Tryfel redTryfel = new Tryfel(1, 5000, "white");
+        Tryfel greenTryfel = new Tryfel(2, 5000, "green");
+        Tryfel brownTryfel = new Tryfel(3, 5000, "brown");
+        Tryfel redTryfel = new Tryfel(4, 5000, "red");
         basketArray.addTryfel(whiteTryfel);
         basketArray.addTryfel(greenTryfel);
         basketArray.addTryfel(brownTryfel);
         basketArray.addTryfel(redTryfel);
-        basketArray.getTryfel();
-        basketArray.getTryfel();
-        basketArray.getTryfel();
+        Assert.assertEquals(3, basketArray.getCurrentSize());
+        Assert.assertEquals(brownTryfel, basketArray.getTryfel());
+        Assert.assertEquals(greenTryfel, basketArray.getTryfel());
+        Assert.assertEquals(whiteTryfel, basketArray.getTryfel());
         Assert.assertEquals(0, basketArray.getCurrentSize());
     }
 }

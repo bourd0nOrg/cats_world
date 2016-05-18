@@ -24,4 +24,12 @@ public class Tryfel {
         return breed;
     }
 
+    @Override
+    public String toString() {
+        return "Tryfel{" +
+                "weight=" + weight +
+                ", price=" + price +
+                ", breed='" + breed + '\'' +
+                '}';
+    }
 }

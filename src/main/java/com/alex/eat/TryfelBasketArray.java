@@ -12,7 +12,7 @@ public class TryfelBasketArray {
     }
 
     public void addTryfel(Tryfel tryfel) {
-        if (index <= size - 1) {
+        if (index < size - 1) {
             index = index + 1;
             this.tryfels[index] = tryfel;
         } else {
@@ -32,5 +32,9 @@ public class TryfelBasketArray {
 
     public Tryfel[] getAllTryfels() {
         return tryfels;
+    }
+
+    public int getCurrentSize() {
+        return index + 1;
     }
 }

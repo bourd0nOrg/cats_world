@@ -23,4 +23,5 @@ public class Tryfel {
     public String getBreed() {
         return breed;
     }
+
 }

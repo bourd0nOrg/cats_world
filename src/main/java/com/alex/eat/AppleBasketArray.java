@@ -34,4 +34,8 @@ public class AppleBasketArray {
     public Apple[] getAllApples() {
         return apples;
     }
+
+    public int getCurrentSize() {
+        return index + 1;
+    }
 }

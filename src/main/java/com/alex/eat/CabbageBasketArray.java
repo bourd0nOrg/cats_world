@@ -12,7 +12,7 @@ public class CabbageBasketArray {
     }
 
     public void addCabbage(Cabbage cabbage) {
-        if (index <= size - 1) {
+        if (index < size - 1) {
             index = index + 1;
             this.cabbages[index] = cabbage;
         } else {
@@ -32,5 +32,9 @@ public class CabbageBasketArray {
 
     public Cabbage[] getCabbages() {
         return cabbages;
+    }
+
+    public int getCurrentSize(){
+        return index + 1;
     }
 }

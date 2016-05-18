@@ -45,7 +45,7 @@ public class TryfelBasketArrayTest {
     }
 
     @Test
-    public void testAddTryfel(){
+    public void testAddTryfel() {
         TryfelBasketArray basketArray = new TryfelBasketArray(3);
         basketArray.addTryfel(new Tryfel(1, 5000, "white"));
         basketArray.addTryfel(new Tryfel(2, 8000, "green"));
@@ -53,13 +53,44 @@ public class TryfelBasketArrayTest {
     }
 
     @Test
-    public void testAddTryfelToFullBasket(){
+    public void testAddTryfelToFullBasket() {
         TryfelBasketArray basketArray = new TryfelBasketArray(3);
-        basketArray.addTryfel(new Tryfel(1, 5000, "white"));
-        basketArray.addTryfel(new Tryfel(2, 8000, "green"));
-        basketArray.addTryfel(new Tryfel(3, 13000, "brown"));
-        basketArray.addTryfel(new Tryfel(4, 25000, "red"));
+        Tryfel whiteTryfel = new Tryfel(1, 5000, "white");
+        Tryfel greenTryfel = new Tryfel(1, 5000, "white");
+        Tryfel brownTryfel = new Tryfel(1, 5000, "white");
+        Tryfel redTryfel = new Tryfel(1, 5000, "white");
+        basketArray.addTryfel(whiteTryfel);
+        basketArray.addTryfel(greenTryfel);
+        basketArray.addTryfel(brownTryfel);
+        basketArray.addTryfel(redTryfel);
         Assert.assertEquals(3, basketArray.getCurrentSize());
+        Tryfel[] tryfels = basketArray.getAllTryfels();
+        Assert.assertEquals(whiteTryfel, tryfels[0]);
+        Assert.assertEquals(greenTryfel, tryfels[1]);
+        Assert.assertEquals(brownTryfel, tryfels[2]);
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testGetTryfelFromEmptyBasket() {
+        TryfelBasketArray basketArray = new TryfelBasketArray(3);
+        basketArray.getTryfel();
+    }
+
+    @Test
+    public void testAddandGetTryfels() {
+        TryfelBasketArray basketArray = new TryfelBasketArray(3);
+        Tryfel whiteTryfel = new Tryfel(1, 5000, "white");
+        Tryfel greenTryfel = new Tryfel(1, 5000, "white");
+        Tryfel brownTryfel = new Tryfel(1, 5000, "white");
+        Tryfel redTryfel = new Tryfel(1, 5000, "white");
+        basketArray.addTryfel(whiteTryfel);
+        basketArray.addTryfel(greenTryfel);
+        basketArray.addTryfel(brownTryfel);
+        basketArray.addTryfel(redTryfel);
+        basketArray.getTryfel();
+        basketArray.getTryfel();
+        basketArray.getTryfel();
+        Assert.assertEquals(0, basketArray.getCurrentSize());
     }
 }
 

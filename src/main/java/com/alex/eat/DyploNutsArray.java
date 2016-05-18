@@ -33,5 +33,9 @@ public class DyploNutsArray {
     public Nut[] getAllNuts() {
         return nuts;
     }
+
+    public int getCurrentSize() {
+        return index + 1;
+    }
 }
 

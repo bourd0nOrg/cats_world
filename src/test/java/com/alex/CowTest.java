@@ -17,4 +17,6 @@ public class CowTest {
         Cow cow = new Cow("aurora", "alpen");
         Assert.assertEquals("alpen", cow.getBreed());
     }
+
+
 }

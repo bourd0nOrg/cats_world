@@ -80,19 +80,22 @@ public class CabbageBasketArrayTest {
 
     @Test
 
-    public void testGetCabbageEmptyBasket(){
-        CabbageBasketArray basketArray = new CabbageBasketArray(3);
+    public void testGetCabbageEmptyBasket() {
+        CabbageBasketArray basketArray = new CabbageBasketArray(4);
 
         Cabbage greenCabbage = new Cabbage(1, "green");
         Cabbage multicolorCabbage = new Cabbage(2, "multicolor");
         Cabbage yellowCabbage = new Cabbage(3, "yellow");
+        Cabbage blueCabbage = new Cabbage(4, "blue");
 
         basketArray.addCabbage(greenCabbage);
         basketArray.addCabbage(multicolorCabbage);
         basketArray.addCabbage(yellowCabbage);
+        basketArray.addCabbage(blueCabbage);
 
-        Assert.assertEquals(3, basketArray.getCurrentSize());
+        Assert.assertEquals(4, basketArray.getCurrentSize());
 
+        Assert.assertEquals(blueCabbage, basketArray.getCabbage());
         Assert.assertEquals(yellowCabbage, basketArray.getCabbage());
         Assert.assertEquals(multicolorCabbage, basketArray.getCabbage());
         Assert.assertEquals(greenCabbage, basketArray.getCabbage());

@@ -11,14 +11,15 @@ public class Carrot {
         this.color = color;
     }
 
-    public int getWeight() {
+    public int getWeight() {return weight;}
 
-        return weight;
+    public String getColor() {return color;}
+
+    @Override
+    public String toString() {
+        return "Carrot{" +
+                "weight=" + weight +
+                ", color='" + color + '\'' +
+                '}';
     }
-
-    public String getColor() {
-
-        return color;
-    }
-
 }

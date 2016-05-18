@@ -36,4 +36,8 @@ public class CarrotBasketArray {
     public Carrot[] getAllCarrots(){
         return carrots;
     }
+
+    public int getCurrentSize (){
+        return index + 1;
+    }
 }

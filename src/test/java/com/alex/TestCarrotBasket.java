@@ -2,7 +2,6 @@ package com.alex;
 
 import com.alex.eat.Carrot;
 import com.alex.eat.CarrotBasketArray;
-import com.sun.xml.internal.txw2.IllegalSignatureException;
 import org.junit.Assert;
 import org.junit.Test;
 

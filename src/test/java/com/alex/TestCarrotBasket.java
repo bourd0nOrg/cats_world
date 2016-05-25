@@ -91,10 +91,26 @@ public class TestCarrotBasket {
         basketArray.addCarrot(blackCarrot);
 
         Assert.assertEquals(3, basketArray.getCurrentSize());
-        Assert.assertEquals(whiteCarrot,basketArray.getCarrot());
-        Assert.assertEquals(yellowCarrot,basketArray.getCarrot());
-        Assert.assertEquals(orangeCarrot,basketArray.getCarrot());
-        Assert.assertEquals( 0, basketArray.getCurrentSize());
+        Assert.assertEquals(whiteCarrot, basketArray.getCarrot());
+        Assert.assertEquals(yellowCarrot, basketArray.getCarrot());
+        Assert.assertEquals(orangeCarrot, basketArray.getCarrot());
+        Assert.assertEquals(0, basketArray.getCurrentSize());
+
+    }
+
+    @Test
+    public void testWeightOfBasket() {
+        CarrotBasketArray basketArray = new CarrotBasketArray(4);
+
+        Carrot orangeCarrot = new Carrot(1, "orange");
+        Carrot yellowCarrot = new Carrot(2, "yellow");
+        Carrot whiteCarrot = new Carrot(3, "white");
+
+        basketArray.addCarrot(orangeCarrot);
+        basketArray.addCarrot(yellowCarrot);
+        basketArray.addCarrot(whiteCarrot);
+
+        Assert.assertEquals(6, basketArray.getWeight());
 
     }
 }

@@ -102,4 +102,20 @@ public class CabbageBasketArrayTest {
 
     }
 
+    @Test
+
+    public void testWeightOfBasket(){
+        CabbageBasketArray basketArray = new CabbageBasketArray(4);
+
+        Cabbage greenCabbage = new Cabbage(1, "green");
+        Cabbage multicolorCabbage = new Cabbage(2, "multicolor");
+        Cabbage yellowCabbage = new Cabbage(3, "yellow");
+
+        basketArray.addCabbage(greenCabbage);
+        basketArray.addCabbage(multicolorCabbage);
+        basketArray.addCabbage(yellowCabbage);
+
+        Assert.assertEquals(6, basketArray.getWeight());
+
+    }
 }

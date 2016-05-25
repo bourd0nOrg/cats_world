@@ -96,4 +96,18 @@ public class BasketEggsArrayTest {
         Assert.assertEquals(0, basketArray.getCurrentSize());
 
     }
+    @Test
+    public void testWeighOfBasket() {
+        BasketEggsArray basketArray = new BasketEggsArray(4);
+
+        Eggs whiteEggs = new Eggs(1, "white", "of chickens");
+        Eggs brownEggs = new Eggs(2, "brown", "of chickens");
+        Eggs yellowEggs = new Eggs(3, "yellow", "of chickens");
+
+        basketArray.addEggs(whiteEggs);
+        basketArray.addEggs(brownEggs);
+        basketArray.addEggs(yellowEggs);
+
+        Assert.assertEquals(6, basketArray.getWeight());
+    }
 }

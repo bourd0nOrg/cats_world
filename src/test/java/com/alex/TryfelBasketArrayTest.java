@@ -1,25 +1,31 @@
 package com.alex;
 
 import com.alex.eat.Tryfel;
-import com.alex.eat.TryfelBasketArray;
+
+import com.alex.eat.TryfelBasketCollection;
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class TryfelBasketArrayTest {
 
     @Test
     public void testAddTryfeltoOneElementBasket() {
-        TryfelBasketArray basketArray = new TryfelBasketArray(1);
+        TryfelBasketCollection basketArray = new TryfelBasketCollection(1);
         Tryfel tryfel = new Tryfel(5, 1000, "white");
         basketArray.addTryfel(tryfel);
-        Tryfel[] tryfels = basketArray.getAllTryfels();
-        Assert.assertEquals("Size should be 1", 1, tryfels.length);
-        Assert.assertEquals("Added tryfel is really that we add", tryfel, tryfels[0]);
+        Set<Tryfel> tryfels = basketArray.getAllTryfels();
+        Assert.assertEquals("Size should be 1", 1, tryfels.size());
+        Assert.assertEquals("Added tryfel is really that we add", tryfel, tryfels.iterator().next());
     }
 
     @Test
     public void testGetTryfelFromOneElementBasket() {
-        TryfelBasketArray basketArray = new TryfelBasketArray(1);
+        TryfelBasketCollection basketArray = new TryfelBasketCollection(1);
         Tryfel tryfel = new Tryfel(5, 2000, "black");
         basketArray.addTryfel(tryfel);
         Tryfel tryfelFromBasket = basketArray.getTryfel();
@@ -30,7 +36,7 @@ public class TryfelBasketArrayTest {
 
     @Test
     public void testAddTryfelToZeroElementBasket() {
-        TryfelBasketArray basketArray = new TryfelBasketArray(0);
+        TryfelBasketCollection basketArray = new TryfelBasketCollection(0);
         Tryfel tryfel = new Tryfel(5, 3000, "black");
         basketArray.addTryfel(tryfel);
         Assert.assertEquals(0, basketArray.getCurrentSize());
@@ -38,14 +44,14 @@ public class TryfelBasketArrayTest {
 
     @Test(expected = IllegalStateException.class)
     public void testGetTryfelToZeroElementBasket() {
-        TryfelBasketArray basketArray = new TryfelBasketArray(0);
+        TryfelBasketCollection basketArray = new TryfelBasketCollection(0);
         Tryfel tryfelFromBasket = basketArray.getTryfel();
 
     }
 
     @Test
     public void testAddTryfel() {
-        TryfelBasketArray basketArray = new TryfelBasketArray(3);
+        TryfelBasketCollection basketArray = new TryfelBasketCollection(3);
         basketArray.addTryfel(new Tryfel(1, 5000, "white"));
         basketArray.addTryfel(new Tryfel(2, 8000, "green"));
         Assert.assertEquals(2, basketArray.getCurrentSize());
@@ -53,7 +59,7 @@ public class TryfelBasketArrayTest {
 
     @Test
     public void testAddTryfelToFullBasket() {
-        TryfelBasketArray basketArray = new TryfelBasketArray(3);
+        TryfelBasketCollection basketArray = new TryfelBasketCollection(3);
         Tryfel whiteTryfel = new Tryfel(1, 5000, "white");
         Tryfel greenTryfel = new Tryfel(1, 5000, "white");
         Tryfel brownTryfel = new Tryfel(1, 5000, "white");
@@ -63,21 +69,22 @@ public class TryfelBasketArrayTest {
         basketArray.addTryfel(brownTryfel);
         basketArray.addTryfel(redTryfel);
         Assert.assertEquals(3, basketArray.getCurrentSize());
-        Tryfel[] tryfels = basketArray.getAllTryfels();
-        Assert.assertEquals(whiteTryfel, tryfels[0]);
-        Assert.assertEquals(greenTryfel, tryfels[1]);
-        Assert.assertEquals(brownTryfel, tryfels[2]);
+        Set<Tryfel> tryfels = basketArray.getAllTryfels();
+
+        Assert.assertTrue("Basket should contain white Tryfel",tryfels.contains(whiteTryfel));
+        Assert.assertTrue("Basket should contain green Tryfel",tryfels.contains(greenTryfel));
+        Assert.assertTrue("Basket should contain brown Tryfel",tryfels.contains(brownTryfel));
     }
 
     @Test(expected = IllegalStateException.class)
     public void testGetTryfelFromEmptyBasket() {
-        TryfelBasketArray basketArray = new TryfelBasketArray(3);
+        TryfelBasketCollection basketArray = new TryfelBasketCollection(3);
         basketArray.getTryfel();
     }
 
     @Test
     public void testAddandGetTryfels() {
-        TryfelBasketArray basketArray = new TryfelBasketArray(3);
+        TryfelBasketCollection basketArray = new TryfelBasketCollection(3);
         Tryfel whiteTryfel = new Tryfel(1, 5000, "white");
         Tryfel greenTryfel = new Tryfel(2, 5000, "green");
         Tryfel brownTryfel = new Tryfel(3, 5000, "brown");
@@ -87,10 +94,51 @@ public class TryfelBasketArrayTest {
         basketArray.addTryfel(brownTryfel);
         basketArray.addTryfel(redTryfel);
         Assert.assertEquals(3, basketArray.getCurrentSize());
-        Assert.assertEquals(brownTryfel, basketArray.getTryfel());
+        /*Assert.assertEquals(brownTryfel, basketArray.getTryfel());
         Assert.assertEquals(greenTryfel, basketArray.getTryfel());
-        Assert.assertEquals(whiteTryfel, basketArray.getTryfel());
+        Assert.assertEquals(whiteTryfel, basketArray.getTryfel());*/
+        List<Tryfel> testTryfels = new ArrayList<>();
+        testTryfels.add(whiteTryfel);
+        testTryfels.add(greenTryfel);
+        testTryfels.add(brownTryfel);
+
+        Tryfel currentTestTryfel = basketArray.getTryfel();
+        Assertions.assertThat(currentTestTryfel).isIn(testTryfels);
+        testTryfels.remove(currentTestTryfel);
+
+        currentTestTryfel = basketArray.getTryfel();
+        Assertions.assertThat(currentTestTryfel).isIn(testTryfels);
+        testTryfels.remove(currentTestTryfel);
+
+        currentTestTryfel = basketArray.getTryfel();
+        Assertions.assertThat(currentTestTryfel).isIn(testTryfels);
+        testTryfels.remove(currentTestTryfel);
+
         Assert.assertEquals(0, basketArray.getCurrentSize());
+    }
+
+    @Test
+    public void testWeigtOfBasket() {
+        TryfelBasketCollection basketArray = new TryfelBasketCollection(4);
+        Tryfel whiteTryfel = new Tryfel(1, 5000, "white");
+        Tryfel greenTryfel = new Tryfel(2, 5000, "green");
+        Tryfel brownTryfel = new Tryfel(3, 5000, "brown");
+        basketArray.addTryfel(whiteTryfel);
+        basketArray.addTryfel(greenTryfel);
+        basketArray.addTryfel(brownTryfel);
+        Assert.assertEquals("Weight of the basket",6, basketArray.getWeight());
+    }
+
+    @Test
+    public void testCollectionTryfelsBasket() {
+        TryfelBasketCollection basketArray = new TryfelBasketCollection(4);
+        Tryfel whiteTryfel = new Tryfel(1, 5000, "white");
+        Tryfel greenTryfel = new Tryfel(2, 5000, "green");
+        Tryfel brownTryfel = new Tryfel(3, 5000, "brown");
+        basketArray.addTryfel(whiteTryfel);
+        basketArray.addTryfel(greenTryfel);
+        basketArray.addTryfel(brownTryfel);
+        Assert.assertEquals("Weight of the basket",6, basketArray.getWeight());
     }
 }
 

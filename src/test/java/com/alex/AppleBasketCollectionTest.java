@@ -1,25 +1,32 @@
 package com.alex;
 
 import com.alex.eat.Apple;
-import com.alex.eat.AppleBasketArray;
+import com.alex.eat.AppleBasketCollection;
+import com.alex.eat.Carrot;
+import com.alex.eat.SuperBasket;
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class AppleBasketArrayTest {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+public class AppleBasketCollectionTest {
 
     @Test
     public void testAddAppleToOneElementBasket() {
-        AppleBasketArray basketArray = new AppleBasketArray(1);
+        AppleBasketCollection basketArray = new AppleBasketCollection(1);
         Apple apple = new Apple(10, "green");
         basketArray.addApple(apple);
-        Apple[] apples = basketArray.getAllApples();
-        Assert.assertEquals("Size should be 1", 1, apples.length);
-        Assert.assertEquals("Added apple is really that we add", apple, apples[0]);
+        Set<Apple> apples = basketArray.getAllApples();
+        Assert.assertEquals("Size should be 1", 1, apples.size());
+        Assert.assertEquals("Added apple is really that we add", apple, apples.iterator().next());
     }
 
     @Test
     public void testGetAppleFromOneElementBasket() {
-        AppleBasketArray basketArray = new AppleBasketArray(1);
+        AppleBasketCollection basketArray = new AppleBasketCollection(1);
         Apple apple = new Apple(10, "green");
         basketArray.addApple(apple);
         Apple appleFromBasket = basketArray.getApple();
@@ -29,7 +36,7 @@ public class AppleBasketArrayTest {
 
     @Test
     public void testAddAppleToZeroElementBasket() {
-        AppleBasketArray basketArray = new AppleBasketArray(0);
+        AppleBasketCollection basketArray = new AppleBasketCollection(0);
         Apple apple = new Apple(10, "green");
         basketArray.addApple(apple);
         Assert.assertEquals(0, basketArray.getCurrentSize());
@@ -37,13 +44,13 @@ public class AppleBasketArrayTest {
 
     @Test(expected = IllegalStateException.class)
     public void testGetAppleFromZeroElementBasket() {
-        AppleBasketArray basketArray = new AppleBasketArray(0);
+        AppleBasketCollection basketArray = new AppleBasketCollection(0);
         Apple appleFromBasket = basketArray.getApple();
     }
 
     @Test
     public void testAddApple() {
-        AppleBasketArray basketArray = new AppleBasketArray(3);
+        AppleBasketCollection basketArray = new AppleBasketCollection(3);
         basketArray.addApple(new Apple(1, "green"));
         basketArray.addApple(new Apple(2, "red"));
         Assert.assertEquals(2, basketArray.getCurrentSize());
@@ -51,7 +58,7 @@ public class AppleBasketArrayTest {
 
     @Test
     public void testAddAppleToFullBasket() {
-        AppleBasketArray basketArray = new AppleBasketArray(3);
+        AppleBasketCollection basketArray = new AppleBasketCollection(3);
 
         Apple greenApple = new Apple(1, "green");
         Apple redApple = new Apple(2, "red");
@@ -64,21 +71,22 @@ public class AppleBasketArrayTest {
         basketArray.addApple(blueApple);
 
         Assert.assertEquals(3, basketArray.getCurrentSize());
-        Apple[] apples = basketArray.getAllApples();
-        Assert.assertEquals(greenApple, apples[0]);
-        Assert.assertEquals(redApple, apples[1]);
-        Assert.assertEquals(yellowApple, apples[2]);
+        Set<Apple> apples = basketArray.getAllApples();
+        
+        Assert.assertTrue("Basket should contain green apple", apples.contains(greenApple));
+        Assert.assertTrue(apples.contains(redApple));
+        Assert.assertTrue(apples.contains(yellowApple));
     }
 
     @Test(expected = IllegalStateException.class)
     public void testGetAppleFromEmptyBasket() {
-        AppleBasketArray basketArray = new AppleBasketArray(3);
+        AppleBasketCollection basketArray = new AppleBasketCollection(3);
         basketArray.getApple();
     }
 
     @Test
     public void testGetApples() {
-        AppleBasketArray basketArray = new AppleBasketArray(3);
+        AppleBasketCollection basketArray = new AppleBasketCollection(3);
 
         Apple greenApple = new Apple(1, "green");
         Apple redApple = new Apple(2, "red");
@@ -92,16 +100,29 @@ public class AppleBasketArrayTest {
 
         Assert.assertEquals(3, basketArray.getCurrentSize());
 
-        Assert.assertEquals(yellowApple, basketArray.getApple());
-        Assert.assertEquals(redApple, basketArray.getApple());
-        Assert.assertEquals(greenApple, basketArray.getApple());
+        List<Apple> testApples = new ArrayList<>();
+        testApples.add(yellowApple);
+        testApples.add(redApple);
+        testApples.add(greenApple);
+
+        Apple currentTestApple = basketArray.getApple();
+        Assertions.assertThat(currentTestApple).isIn(testApples);
+        testApples.remove(currentTestApple);
+
+        currentTestApple = basketArray.getApple();
+        Assertions.assertThat(currentTestApple).isIn(testApples);
+        testApples.remove(currentTestApple);
+
+        currentTestApple = basketArray.getApple();
+        Assertions.assertThat(currentTestApple).isIn(testApples);
+        testApples.remove(currentTestApple);
 
         Assert.assertEquals(0, basketArray.getCurrentSize());
     }
 
     @Test
     public void testWeightOfBasket() {
-        AppleBasketArray basketArray = new AppleBasketArray(4);
+        AppleBasketCollection basketArray = new AppleBasketCollection(4);
 
         Apple greenApple = new Apple(1, "green");
         Apple redApple = new Apple(2, "red");

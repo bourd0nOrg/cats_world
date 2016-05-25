@@ -1,6 +1,6 @@
 package com.alex.eat;
 
-public class CabbageBasketArray {
+public class CabbageBasketArray implements Weigh {
     private Cabbage[] cabbages;
     private int index;
     private int size;
@@ -34,7 +34,33 @@ public class CabbageBasketArray {
         return cabbages;
     }
 
-    public int getCurrentSize(){
+    public int getCurrentSize() {
         return index + 1;
     }
+
+    @Override
+    public int getWeight() {
+        int sum = 0;
+       /* for (int i = 0; i < cabbages.length; i++) {
+            Cabbage currentCabbage = cabbages[i];
+            if (currentCabbage i = null){
+                sum = sum + cabbages[i].getWeight();
+            }
+        }*/
+        //2 variant
+        for (int i = 0; i < getCurrentSize(); i++) {
+            sum = sum + cabbages[i].getWeight();
+        }
+        return sum;
+    }
 }
+        //3 variant
+      /*  for (Cabbage currentCabbage : cabbages) {
+            if (cabbage i=null) {
+                sum = sum cabbages.getWeight();
+            }
+        }
+            return 0;
+        }
+    }*/
+

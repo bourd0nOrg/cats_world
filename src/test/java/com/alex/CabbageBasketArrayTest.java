@@ -72,8 +72,8 @@ public class CabbageBasketArrayTest {
         Set<Cabbage> cabbages = basketArray.getCabbages();
 
         Assert.assertTrue("Basket", cabbages.contains(greenCabbage));
-        Assert.assertEquals(multicolorCabbage, cabbages.size());
-        Assert.assertEquals(yellowCabbage, cabbages.size());
+        Assert.assertTrue("Basket", cabbages.contains(multicolorCabbage));
+        Assert.assertTrue("Basket", cabbages.contains(yellowCabbage));
     }
 
     @Test(expected = IllegalStateException.class)
@@ -106,18 +106,18 @@ public class CabbageBasketArrayTest {
         testCabbages.add(greenCabbage);
 
         Cabbage currentTestCabbage = basketArray.getCabbage();
-        Assertions.assertThat(basketArray.getCabbage()).isIn(testCabbages);
+        Assertions.assertThat(currentTestCabbage).isIn(testCabbages);
         testCabbages.remove(currentTestCabbage);
 
         currentTestCabbage = basketArray.getCabbage();
-        Assertions.assertThat(basketArray.getCabbage()).isIn(testCabbages);
+        Assertions.assertThat(currentTestCabbage).isIn(testCabbages);
         testCabbages.remove(currentTestCabbage);
 
         currentTestCabbage = basketArray.getCabbage();
-        Assertions.assertThat(basketArray.getCabbage()).isIn(testCabbages);
+        Assertions.assertThat(currentTestCabbage).isIn(testCabbages);
         testCabbages.remove(currentTestCabbage);
 
-        Assert.assertEquals(0, basketArray.getCurrentSize());
+        Assert.assertEquals(1, basketArray.getCurrentSize());
 
     }
 

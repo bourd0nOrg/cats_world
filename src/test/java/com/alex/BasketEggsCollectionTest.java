@@ -2,23 +2,30 @@ package com.alex;
 
 import com.alex.eat.BasketEggsArray;
 import com.alex.eat.Eggs;
+import com.alex.eat.EggsBasketCollection;
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class BasketEggsArrayTest {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+public class BasketEggsCollectionTest {
     @Test
     public void testAddEggsToOneElementBasket() {
-        BasketEggsArray basketArray = new BasketEggsArray(1);
+        EggsBasketCollection basketArray = new EggsBasketCollection(1);
         Eggs eggs = new Eggs(10, "white", "of chickens");
         basketArray.addEggs(eggs);
-        Eggs[] eggses = basketArray.getEggses();
-        Assert.assertEquals("Size should be 1", 1, eggses.length);
-        Assert.assertEquals("Added eggs is really that we add", eggs, eggses[0]);
+        Set<Eggs> eggses = basketArray.getAllEggs();
+
+        Assert.assertEquals("Size should be 1", 1, eggses.size());
+        Assert.assertEquals("Added eggs is really that we add", eggs, eggses.iterator().next());
     }
 
     @Test
     public void testGetEggsFromOneElementBasket() {
-        BasketEggsArray basketArray = new BasketEggsArray(1);
+        EggsBasketCollection basketArray = new EggsBasketCollection(1);
         Eggs eggs = new Eggs(10, "white", "of chickens");
         basketArray.addEggs(eggs);
         Eggs eggsFromBasket = basketArray.getEggs();
@@ -28,7 +35,7 @@ public class BasketEggsArrayTest {
 
     @Test
     public void testGetEggsToZeroElementBasket() {
-        BasketEggsArray basketArray = new BasketEggsArray(0);
+        EggsBasketCollection basketArray = new EggsBasketCollection(0);
         Eggs eggs = new Eggs(10, "white", "of chickens");
         basketArray.addEggs(eggs);
         Assert.assertEquals(0, basketArray.getCurrentSize());
@@ -36,13 +43,13 @@ public class BasketEggsArrayTest {
 
     @Test(expected = IllegalStateException.class)
     public void testGetEggsFromZeroElementBasket() {
-        BasketEggsArray basketArray = new BasketEggsArray(0);
+        EggsBasketCollection basketArray = new EggsBasketCollection(0);
         Eggs eggsFromBasket = basketArray.getEggs();
     }
 
     @Test
     public void testAddEggs() {
-        BasketEggsArray basketArray = new BasketEggsArray(3);
+        EggsBasketCollection basketArray = new EggsBasketCollection(3);
         basketArray.addEggs(new Eggs(1, "white", "of chickens"));
         basketArray.addEggs(new Eggs(2, "brown", "of chickens"));
         Assert.assertEquals(2, basketArray.getCurrentSize());
@@ -50,7 +57,7 @@ public class BasketEggsArrayTest {
 
     @Test
     public void testAddEggsToFullBasket() {
-        BasketEggsArray basketArray = new BasketEggsArray(3);
+        EggsBasketCollection basketArray = new EggsBasketCollection(3);
 
         Eggs whiteEggs = new Eggs(1, "white", "of chickens");
         Eggs brownEggs = new Eggs(2, "brown", "of chickens");
@@ -63,21 +70,21 @@ public class BasketEggsArrayTest {
         basketArray.addEggs(redEggs);
 
         Assert.assertEquals(3, basketArray.getCurrentSize());
-        Eggs[] eggses = basketArray.getEggses();
-        Assert.assertEquals(whiteEggs, eggses[0]);
-        Assert.assertEquals(brownEggs, eggses[1]);
-        Assert.assertEquals(yellowEggs, eggses[2]);
+        Set<Eggs> eggses = basketArray.getAllEggs();
+        Assert.assertTrue("Basket should containt white eggs", eggses.contains(whiteEggs));
+        Assert.assertTrue("Basket should containt brown eggs", eggses.contains(brownEggs));
+        Assert.assertTrue("Basket should containt yellow eggs", eggses.contains(yellowEggs));
     }
 
     @Test(expected = IllegalStateException.class)
     public void testGetEggsFromEmptyBasket() {
-        BasketEggsArray basketArray = new BasketEggsArray(3);
+        EggsBasketCollection basketArray = new EggsBasketCollection(3);
         basketArray.getEggs();
     }
 
     @Test
     public void testGetCurrentEggs() {
-        BasketEggsArray basketArray = new BasketEggsArray(3);
+        EggsBasketCollection basketArray = new EggsBasketCollection(3);
 
         Eggs whiteEggs = new Eggs(1, "white", "of chickens");
         Eggs brownEggs = new Eggs(2, "brown", "of chickens");
@@ -90,15 +97,31 @@ public class BasketEggsArrayTest {
         basketArray.addEggs(redEggs);
 
         Assert.assertEquals(3, basketArray.getCurrentSize());
-        Assert.assertEquals(yellowEggs, basketArray.getEggs());
-        Assert.assertEquals(brownEggs, basketArray.getEggs());
-        Assert.assertEquals(whiteEggs, basketArray.getEggs());
+
+        List<Eggs> testEggses = new ArrayList<>();
+        testEggses.add(whiteEggs);
+        testEggses.add(brownEggs);
+        testEggses.add(yellowEggs);
+
+        Eggs currentTesrEggs = basketArray.getEggs();
+        Assertions.assertThat(currentTesrEggs).isIn(testEggses);
+        testEggses.remove(currentTesrEggs);
+
+        currentTesrEggs = basketArray.getEggs();
+        Assertions.assertThat(currentTesrEggs).isIn(testEggses);
+        testEggses.remove(currentTesrEggs);
+
+        currentTesrEggs = basketArray.getEggs();
+        Assertions.assertThat(currentTesrEggs).isIn(testEggses);
+        testEggses.remove(currentTesrEggs);
+
         Assert.assertEquals(0, basketArray.getCurrentSize());
 
     }
+
     @Test
     public void testWeighOfBasket() {
-        BasketEggsArray basketArray = new BasketEggsArray(4);
+        EggsBasketCollection basketArray = new EggsBasketCollection(4);
 
         Eggs whiteEggs = new Eggs(1, "white", "of chickens");
         Eggs brownEggs = new Eggs(2, "brown", "of chickens");

@@ -1,7 +1,7 @@
 package com.alex.eat;
 
 
-public class Eggs {
+public class Eggs  implements Weigh{
     private int weight;
     private String color;
     private String breed;

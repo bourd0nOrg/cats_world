@@ -1,6 +1,6 @@
 package com.alex.eat;
 
-public class Apple {
+public class Apple implements Weigh {
 
     private int weight;
     private String color;

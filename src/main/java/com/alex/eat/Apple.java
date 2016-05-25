@@ -10,6 +10,7 @@ public class Apple implements Weigh {
         this.color = color;
     }
 
+    @Override
     public int getWeight() {
         return weight;
     }

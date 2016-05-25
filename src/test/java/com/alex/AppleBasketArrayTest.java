@@ -97,7 +97,20 @@ public class AppleBasketArrayTest {
         Assert.assertEquals(greenApple, basketArray.getApple());
 
         Assert.assertEquals(0, basketArray.getCurrentSize());
-
     }
 
+    @Test
+    public void testWeightOfBasket() {
+        AppleBasketArray basketArray = new AppleBasketArray(4);
+
+        Apple greenApple = new Apple(1, "green");
+        Apple redApple = new Apple(2, "red");
+        Apple yellowApple = new Apple(3, "yellow");
+
+        basketArray.addApple(greenApple);
+        basketArray.addApple(redApple);
+        basketArray.addApple(yellowApple);
+
+        Assert.assertEquals(6, basketArray.getWeight());
+    }
 }

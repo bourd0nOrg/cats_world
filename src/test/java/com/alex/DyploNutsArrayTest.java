@@ -74,6 +74,7 @@ public class DyploNutsArrayTest {
         dyploArray.getNut();
 
     }
+
     @Test
     public void testGetCurrentNut() {
         DyploNutsArray dyploArray = new DyploNutsArray(3);
@@ -88,11 +89,25 @@ public class DyploNutsArrayTest {
         dyploArray.addNut(semyNut);
         dyploArray.addNut(gelydNut);
 
-        Assert.assertEquals(3,dyploArray.getCurrentSize());
+        Assert.assertEquals(3, dyploArray.getCurrentSize());
         Assert.assertEquals(semyNut, dyploArray.getNut());
         Assert.assertEquals(shishkaNut, dyploArray.getNut());
         Assert.assertEquals(kedrNut, dyploArray.getNut());
-        Assert.assertEquals(0,dyploArray.getCurrentSize());
+        Assert.assertEquals(0, dyploArray.getCurrentSize());
+    }
+
+    @Test
+    public void testWeightOfDyplo() {
+        DyploNutsArray dyploArray = new DyploNutsArray(3);
+        Nut kedrNut = new Nut(1, "kedr");
+        Nut shishkaNut = new Nut(2, "shishka");
+        Nut semyNut = new Nut(3, "semy");
+
+        dyploArray.addNut(kedrNut);
+        dyploArray.addNut(shishkaNut);
+        dyploArray.addNut(semyNut);
+
+        Assert.assertEquals(6,dyploArray.getWeight());
     }
 
 }

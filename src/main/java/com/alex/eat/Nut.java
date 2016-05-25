@@ -1,6 +1,6 @@
 package com.alex.eat;
 
-public class Nut {
+public class Nut implements Weigh {
 
     private int weight;
     private String kind;

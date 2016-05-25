@@ -29,7 +29,7 @@ public class CarrotBasketArray implements Weigh {
             index = index - 1;
             return carrot;
         } else {
-            throw new IllegalStateException("Sorry the basket is empty T_T");
+            throw new IllegalStateException("Sorry the basket is empty :C");
         }
     }
 
@@ -54,11 +54,11 @@ public class CarrotBasketArray implements Weigh {
                      sum = sum + carrots[i].getWeight();
             }
         }*/
-        for (Carrot carrot : carrots){
-            if (carrot != null){
+        for (Carrot carrot : carrots) {
+            if (carrot != null) {
                 sum = sum + carrot.getWeight();
             }
         }
-            return sum;
-        }
+        return sum;
+    }
 }

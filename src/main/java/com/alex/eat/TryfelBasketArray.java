@@ -1,6 +1,6 @@
 package com.alex.eat;
 
-public class TryfelBasketArray {
+public class TryfelBasketArray implements Weigh {
     private Tryfel[] tryfels;
     private int index;
     private int size;
@@ -36,5 +36,29 @@ public class TryfelBasketArray {
 
     public int getCurrentSize() {
         return index + 1;
+    }
+
+    @Override
+    public int getWeight() {
+        int sum = 0;
+    /*    for (int i = 0; i < tryfels.length; i++) {
+            Tryfel currenttryfel = tryfels[i];
+            if (currenttryfel != null) {
+                sum = sum + currenttryfel.getWeight();
+
+            }
+            return sum;
+        }
+        for (int i = 0; i < getCurrentSize(); i++) {
+            sum = sum + tryfels[i].getWeight();
+        }
+        return sum;
+    }*/
+        for (Tryfel tryfel : tryfels) {
+            if (tryfel != null) {
+                sum = sum + tryfel.getWeight();
+            }
+        }
+        return sum;
     }
 }

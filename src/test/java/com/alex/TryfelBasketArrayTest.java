@@ -92,5 +92,17 @@ public class TryfelBasketArrayTest {
         Assert.assertEquals(whiteTryfel, basketArray.getTryfel());
         Assert.assertEquals(0, basketArray.getCurrentSize());
     }
+
+    @Test
+    public void testWeigtOfBasket() {
+        TryfelBasketArray basketArray = new TryfelBasketArray(4);
+        Tryfel whiteTryfel = new Tryfel(1, 5000, "white");
+        Tryfel greenTryfel = new Tryfel(2, 5000, "green");
+        Tryfel brownTryfel = new Tryfel(3, 5000, "brown");
+        basketArray.addTryfel(whiteTryfel);
+        basketArray.addTryfel(greenTryfel);
+        basketArray.addTryfel(brownTryfel);
+        Assert.assertEquals("Weight of the basket",6, basketArray.getWeight());
+    }
 }
 

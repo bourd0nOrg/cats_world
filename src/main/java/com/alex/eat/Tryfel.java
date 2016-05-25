@@ -1,7 +1,7 @@
 package com.alex.eat;
 
 
-public class Tryfel {
+public class Tryfel implements Weigh {
     private int weight;
     private int price;
     private String breed;

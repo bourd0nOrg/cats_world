@@ -1,6 +1,6 @@
 package com.alex.eat;
 
-public class Carrot {
+public class Carrot implements Weigh{
 
     private int weight;
     private String color;
@@ -11,9 +11,13 @@ public class Carrot {
         this.color = color;
     }
 
-    public int getWeight() {return weight;}
+    public int getWeight() {
+        return weight;
+    }
 
-    public String getColor() {return color;}
+    public String getColor() {
+        return color;
+    }
 
     @Override
     public String toString() {

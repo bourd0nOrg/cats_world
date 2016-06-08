@@ -3,7 +3,9 @@ package com.alex;
 import com.alex.eat.Lapa;
 import com.alex.exceptions.PetIsDeadException;
 import com.alex.pets.Bear;
+import com.alex.pets.Bunny;
 import com.alex.pets.Dragon;
+import com.alex.plants.Clover;
 import org.junit.Assert;
 import org.junit.Test;
 import com.alex.eat.Wet;
@@ -40,4 +42,9 @@ public class BearTest {
         dragon.kill(bear);
         bear.grblzt(new Lapa("lapa", "43"));
     }
+        @Test
+        public void testBearHaveCorrectName() {
+            Bear bear = new Bear("Ivan", "Aggressive russian bear", "Black");
+            Assert.assertEquals("Check bear has correct name", "Ivan", bear.getName());
+        }
 }

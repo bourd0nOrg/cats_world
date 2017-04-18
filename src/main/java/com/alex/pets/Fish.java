@@ -1,12 +1,17 @@
 package com.alex.pets;
 
+import com.alex.eda.Ikra;
+import com.alex.exceptions.PetIsDeadException;
+
 public class Fish extends Pet implements Alive {
 
     protected String breed;
+    private String metatIkra;
 
-    public Fish(String breed) {
+    public Fish(String shark) {
         super();
         this.breed = breed;
+        this.metatIkra = metatIkra;
     }
 
     public String getBreed() {
@@ -14,11 +19,34 @@ public class Fish extends Pet implements Alive {
     }
 
     public void eat(Object object) {
+        if (!isAlive())
+            throw new PetIsDeadException(this);
+
         if (object instanceof Cat) {
             System.out.println("!!! Fish " + breed + " can't eat cat");
-        } else {
-            System.out.println("Fish " + breed + " eat " + object.toString());
+
+                Cat cat = (Cat) object;
+                if (cat.isAlive()) {
+                    cat.kill();
+                } else {
+                    System.out.println("Fish " + breed + " eat " + object.toString());
+                }
+
+
         }
     }
+    public void metatIkra(Object object){
+    if (!isAlive())
+            throw new PetIsDeadException(this);
+        if (object instanceof Ikra) {
+            System.out.println("Fish otlozila ikru");
+            Ikra ikra = (Ikra) object;
+            if (ikra.isEst()) {
+                ikra.netu();
+            } else {
+                System.out.println("Ikri net");
+            }
+        }
 
+    }
 }
